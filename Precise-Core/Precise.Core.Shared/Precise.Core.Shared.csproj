@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <RootNamespace>Precise</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Abp" Version="4.0.2" />
+    <PackageReference Include="Abp.Zero.Common" Version="4.0.2" />
+    <PackageReference Include="Abp.ZeroCore" Version="4.0.2" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="2.1.1" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,58 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <RootNamespace>Precise</RootNamespace>
+	<UserSecretsId>Precise-56C2EF2F-ABD6-4EFC-AAF2-2E81C34E8FB1</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Localization\Precise\Precise-ar.xml" />
+    <None Remove="Localization\Precise\Precise-de.xml" />
+    <None Remove="Localization\Precise\Precise-es-MX.xml" />
+    <None Remove="Localization\Precise\Precise-es.xml" />
+    <None Remove="Localization\Precise\Precise-fr.xml" />
+    <None Remove="Localization\Precise\Precise-it.xml" />
+    <None Remove="Localization\Precise\Precise-pt-BR.xml" />
+    <None Remove="Localization\Precise\Precise-ru.xml" />
+    <None Remove="Localization\Precise\Precise-tr.xml" />
+    <None Remove="Localization\Precise\Precise-vi.xml" />
+    <None Remove="Localization\Precise\Precise-zh-Hans.xml" />
+    <None Remove="Localization\Precise\Precise.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Localization\Precise\Precise-ar.xml" />
+    <EmbeddedResource Include="Localization\Precise\Precise-de.xml" />
+    <EmbeddedResource Include="Localization\Precise\Precise-es-MX.xml" />
+    <EmbeddedResource Include="Localization\Precise\Precise-es.xml" />
+    <EmbeddedResource Include="Localization\Precise\Precise-fr.xml" />
+    <EmbeddedResource Include="Localization\Precise\Precise-it.xml" />
+    <EmbeddedResource Include="Localization\Precise\Precise-pt-BR.xml" />
+    <EmbeddedResource Include="Localization\Precise\Precise-ru.xml" />
+    <EmbeddedResource Include="Localization\Precise\Precise-tr.xml" />
+    <EmbeddedResource Include="Localization\Precise\Precise-vi.xml" />
+    <EmbeddedResource Include="Localization\Precise\Precise-zh-Hans.xml" />
+    <EmbeddedResource Include="Localization\Precise\Precise.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Abp.AutoMapper" Version="4.0.2" />
+    <PackageReference Include="Abp.MailKit" Version="4.0.2" />
+    <PackageReference Include="Abp.Zero.Ldap" Version="4.0.2" />
+    <PackageReference Include="Castle.Windsor.MsDependencyInjection" Version="3.3.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.1.4" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="2.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="2.1.1" />
+    <PackageReference Include="System.ComponentModel.Annotations" Version="4.5.0" />
+    <PackageReference Include="TimeZoneConverter" Version="2.5.1" />
+    <PackageReference Include="Twilio" Version="5.24.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Precise.Common\Precise.Common.csproj" />
+    <ProjectReference Include="..\Precise.Core.Shared\Precise.Core.Shared.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <RootNamespace>Precise</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EPPlus.Core" Version="1.5.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Precise.Application.Shared\Precise.Application.Shared.csproj" />
+    <ProjectReference Include="..\Precise.Core\Precise.Core.csproj" />
+    <ProjectReference Include="..\Precise.EntityFrameworkCore\Precise.EntityFrameworkCore.csproj" />
+  </ItemGroup>
+
+</Project>

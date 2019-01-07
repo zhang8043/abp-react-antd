@@ -1,0 +1,64 @@
+﻿DEBUG 2018-12-26 17:16:01,045 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2018-12-26 17:16:01,222 [1    ] Abp.Modules.AbpModuleManager             - Found 14 ABP modules in total.
+DEBUG 2018-12-26 17:16:01,422 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Precise.Migrator.PreciseMigratorModule, Precise.Migrator, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-12-26 17:16:01,425 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Precise.EntityFrameworkCore.PreciseEntityFrameworkCoreModule, Precise.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-12-26 17:16:01,425 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=4.0.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-12-26 17:16:01,426 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=4.0.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-12-26 17:16:01,426 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=4.0.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-12-26 17:16:01,426 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=4.0.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-12-26 17:16:01,426 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=4.0.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-12-26 17:16:01,427 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=4.0.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-12-26 17:16:01,427 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Precise.PreciseCoreModule, Precise.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-12-26 17:16:01,427 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.Ldap.AbpZeroLdapModule, Abp.Zero.Ldap, Version=4.0.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-12-26 17:16:01,427 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=4.0.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-12-26 17:16:01,427 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.MailKit.AbpMailKitModule, Abp.MailKit, Version=4.0.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-12-26 17:16:01,427 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.IdentityServer4.AbpZeroCoreIdentityServerEntityFrameworkCoreModule, Abp.ZeroCore.IdentityServer4.EntityFrameworkCore, Version=4.0.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-12-26 17:16:01,428 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.IdentityServer4.AbpZeroCoreIdentityServerModule, Abp.ZeroCore.IdentityServer4, Version=4.0.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-12-26 17:16:01,430 [1    ] Abp.Modules.AbpModuleManager             - 14 modules loaded.
+DEBUG 2018-12-26 17:16:01,724 [1    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: Precise.EntityFrameworkCore.PreciseDbContext, Precise.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-12-26 17:16:02,342 [1    ] Abp.Localization.LocalizationManager     - Initializing 3 localization sources.
+DEBUG 2018-12-26 17:16:02,382 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2018-12-26 17:16:02,429 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2018-12-26 17:16:02,471 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Precise
+DEBUG 2018-12-26 17:16:02,517 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 1 classes define auto mapping attributes
+DEBUG 2018-12-26 17:16:02,517 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Precise.Friendships.Cache.FriendCacheItem
+INFO  2018-12-26 17:16:04,977 [1    ] Precise.Migrator.Log                     - Host database: Data Source=.; Database=PreciseDb; User ID=sa; Password=123456;
+INFO  2018-12-26 17:16:04,979 [1    ] Precise.Migrator.Log                     - Continue to migration for this host database and all tenants..? (Y/N): 
+INFO  2018-12-26 17:16:10,648 [1    ] Precise.Migrator.Log                     - HOST database migration started...
+INFO  2018-12-26 17:16:12,881 [1    ] Precise.Migrator.Log                     - HOST database migration completed.
+INFO  2018-12-26 17:16:12,881 [1    ] Precise.Migrator.Log                     - --------------------------------------------------------
+INFO  2018-12-26 17:16:12,973 [1    ] Precise.Migrator.Log                     - All databases have been migrated.
+DEBUG 2018-12-26 17:16:14,835 [1    ] Abp.Modules.AbpModuleManager             - Shutting down has been started
+DEBUG 2018-12-26 17:16:14,835 [1    ] Abp.Modules.AbpModuleManager             - Shutting down completed.
+DEBUG 2019-01-06 03:56:13,281 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2019-01-06 03:56:13,444 [1    ] Abp.Modules.AbpModuleManager             - Found 14 ABP modules in total.
+DEBUG 2019-01-06 03:56:13,638 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Precise.Migrator.PreciseMigratorModule, Precise.Migrator, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-06 03:56:13,641 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Precise.EntityFrameworkCore.PreciseEntityFrameworkCoreModule, Precise.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-06 03:56:13,641 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=4.0.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-06 03:56:13,642 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=4.0.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-06 03:56:13,642 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=4.0.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-06 03:56:13,642 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=4.0.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-06 03:56:13,643 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=4.0.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-06 03:56:13,643 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=4.0.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-06 03:56:13,643 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Precise.PreciseCoreModule, Precise.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-06 03:56:13,643 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.Ldap.AbpZeroLdapModule, Abp.Zero.Ldap, Version=4.0.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-06 03:56:13,644 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=4.0.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-06 03:56:13,644 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.MailKit.AbpMailKitModule, Abp.MailKit, Version=4.0.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-06 03:56:13,644 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.IdentityServer4.AbpZeroCoreIdentityServerEntityFrameworkCoreModule, Abp.ZeroCore.IdentityServer4.EntityFrameworkCore, Version=4.0.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-06 03:56:13,644 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.IdentityServer4.AbpZeroCoreIdentityServerModule, Abp.ZeroCore.IdentityServer4, Version=4.0.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-06 03:56:13,647 [1    ] Abp.Modules.AbpModuleManager             - 14 modules loaded.
+DEBUG 2019-01-06 03:56:14,030 [1    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: Precise.EntityFrameworkCore.PreciseDbContext, Precise.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-06 03:56:14,671 [1    ] Abp.Localization.LocalizationManager     - Initializing 3 localization sources.
+DEBUG 2019-01-06 03:56:14,721 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2019-01-06 03:56:14,768 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2019-01-06 03:56:14,809 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Precise
+DEBUG 2019-01-06 03:56:14,865 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 1 classes define auto mapping attributes
+DEBUG 2019-01-06 03:56:14,865 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Precise.Friendships.Cache.FriendCacheItem
+INFO  2019-01-06 03:56:18,238 [1    ] Precise.Migrator.Log                     - Host database: Data Source=.; Database=PreciseDb; User ID=sa; Password=123456;
+INFO  2019-01-06 03:56:18,238 [1    ] Precise.Migrator.Log                     - Continue to migration for this host database and all tenants..? (Y/N): 
+INFO  2019-01-06 03:56:30,032 [1    ] Precise.Migrator.Log                     - HOST database migration started...
+INFO  2019-01-06 03:56:32,331 [1    ] Precise.Migrator.Log                     - HOST database migration completed.
+INFO  2019-01-06 03:56:32,331 [1    ] Precise.Migrator.Log                     - --------------------------------------------------------
+INFO  2019-01-06 03:56:32,430 [1    ] Precise.Migrator.Log                     - All databases have been migrated.
+DEBUG 2019-01-06 03:56:39,476 [1    ] Abp.Modules.AbpModuleManager             - Shutting down has been started
+DEBUG 2019-01-06 03:56:39,477 [1    ] Abp.Modules.AbpModuleManager             - Shutting down completed.

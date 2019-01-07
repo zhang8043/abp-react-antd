@@ -1,0 +1,138 @@
+DEBUG 2019-01-07 08:24:26,229 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2019-01-07 08:24:26,378 [1    ] Abp.Modules.AbpModuleManager             - Found 22 ABP modules in total.
+DEBUG 2019-01-07 08:24:26,400 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Precise.Web.Startup.PreciseWebHostModule, Precise.Web.Host, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-07 08:24:26,402 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Precise.PreciseWebCoreModule, Precise.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-07 08:24:26,402 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Precise.PreciseApplicationModule, Precise.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-07 08:24:26,403 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Precise.PreciseCoreModule, Precise.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-07 08:24:26,403 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=4.0.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-07 08:24:26,403 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=4.0.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-07 08:24:26,403 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=4.0.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-07 08:24:26,403 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.Ldap.AbpZeroLdapModule, Abp.Zero.Ldap, Version=4.0.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-07 08:24:26,404 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=4.0.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-07 08:24:26,404 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.MailKit.AbpMailKitModule, Abp.MailKit, Version=4.0.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-07 08:24:26,404 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Precise.PreciseWeChatModule, Precise.WeChat, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-07 08:24:26,404 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Precise.EntityFrameworkCore.PreciseEntityFrameworkCoreModule, Precise.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-07 08:24:26,404 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=4.0.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-07 08:24:26,405 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=4.0.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-07 08:24:26,405 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=4.0.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-07 08:24:26,405 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.IdentityServer4.AbpZeroCoreIdentityServerEntityFrameworkCoreModule, Abp.ZeroCore.IdentityServer4.EntityFrameworkCore, Version=4.0.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-07 08:24:26,405 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.IdentityServer4.AbpZeroCoreIdentityServerModule, Abp.ZeroCore.IdentityServer4, Version=4.0.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-07 08:24:26,405 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.SignalR.AbpAspNetCoreSignalRModule, Abp.AspNetCore.SignalR, Version=4.0.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-07 08:24:26,405 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=4.0.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-07 08:24:26,406 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=4.0.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-07 08:24:26,406 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Runtime.Caching.Redis.AbpRedisCacheModule, Abp.RedisCache, Version=4.0.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-07 08:24:26,406 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Hangfire.AbpHangfireAspNetCoreModule, Abp.HangFire.AspNetCore, Version=4.0.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-07 08:24:26,409 [1    ] Abp.Modules.AbpModuleManager             - 22 modules loaded.
+DEBUG 2019-01-07 08:24:26,562 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-01-07 08:24:26,562 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-01-07 08:24:26,562 [1    ] o.Configuration.LanguageManagementConfig - Converted Precise (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-01-07 08:24:26,562 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-01-07 08:24:27,325 [1    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: Precise.EntityFrameworkCore.PreciseDbContext, Precise.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-07 08:24:28,360 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2019-01-07 08:24:28,407 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2019-01-07 08:24:28,455 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2019-01-07 08:24:28,492 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Precise
+DEBUG 2019-01-07 08:24:28,517 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2019-01-07 08:24:28,703 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2019-01-07 08:24:28,741 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 2 classes define auto mapping attributes
+DEBUG 2019-01-07 08:24:28,741 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Precise.Web.Models.TokenAuth.ExternalLoginProviderInfoModel
+DEBUG 2019-01-07 08:24:28,747 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Precise.Friendships.Cache.FriendCacheItem
+DEBUG 2019-01-07 08:24:35,796 [1    ] enancy.SubscriptionExpirationCheckWorker - Start background worker: Precise.MultiTenancy.SubscriptionExpirationCheckWorker
+DEBUG 2019-01-07 08:24:35,798 [1    ] cy.SubscriptionExpireEmailNotifierWorker - Start background worker: Precise.MultiTenancy.SubscriptionExpireEmailNotifierWorker
+INFO  2019-01-07 08:24:36,514 [12   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://127.0.0.1:50538/  
+INFO  2019-01-07 08:24:36,514 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 DEBUG http://127.0.0.1:50538/  0
+INFO  2019-01-07 08:24:36,560 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 46.6815ms 200 
+INFO  2019-01-07 08:24:37,338 [12   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Index", controller = "Home", area = ""}. Executing action Precise.Web.Controllers.HomeController.Index (Precise.Web.Host)
+INFO  2019-01-07 08:24:37,371 [12   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Precise.Web.Controllers.HomeController.Index (Precise.Web.Host) - Validation state: Valid
+INFO  2019-01-07 08:24:37,374 [12   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Precise.Web.Controllers.HomeController.Index (Precise.Web.Host), returned result Microsoft.AspNetCore.Mvc.RedirectResult in 0.3135ms.
+INFO  2019-01-07 08:24:37,380 [12   ] vc.Infrastructure.RedirectResultExecutor - Executing RedirectResult, redirecting to /swagger.
+INFO  2019-01-07 08:24:37,382 [12   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Precise.Web.Controllers.HomeController.Index (Precise.Web.Host) in 42.4924ms
+INFO  2019-01-07 08:24:37,390 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://127.0.0.1:50538/swagger  
+INFO  2019-01-07 08:24:37,392 [12   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 879.0439ms 302 
+INFO  2019-01-07 08:24:37,412 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 22.3347ms 301 
+INFO  2019-01-07 08:24:37,414 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://127.0.0.1:50538/swagger/index.html  
+INFO  2019-01-07 08:24:37,478 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 63.5446ms 200 text/html
+INFO  2019-01-07 08:24:37,491 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://127.0.0.1:50538/swagger/swagger-ui.css  
+INFO  2019-01-07 08:24:37,491 [12   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://127.0.0.1:50538/swagger/swagger-ui-bundle.js  
+INFO  2019-01-07 08:24:37,492 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://127.0.0.1:50538/swagger/swagger-ui-standalone-preset.js  
+INFO  2019-01-07 08:24:37,497 [3    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://127.0.0.1:50538/swagger/ui/abp.js  
+INFO  2019-01-07 08:24:37,498 [4    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://127.0.0.1:50538/swagger/ui/abp.swagger.js  
+INFO  2019-01-07 08:24:37,530 [13   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/swagger/ui/abp.swagger.js'. Physical path: 'D:\代码管理\Asp_Net\Precise\Precise-Core\Precise.Web.Host\wwwroot\swagger\ui\abp.swagger.js'
+INFO  2019-01-07 08:24:37,535 [15   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+INFO  2019-01-07 08:24:37,538 [8    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+INFO  2019-01-07 08:24:37,540 [11   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+INFO  2019-01-07 08:24:37,542 [15   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/swagger/ui/abp.js'. Physical path: 'D:\代码管理\Asp_Net\Precise\Precise-Core\Precise.Web.Host\wwwroot\swagger\ui\abp.js'
+INFO  2019-01-07 08:24:37,549 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 57.9336ms 200 application/javascript
+INFO  2019-01-07 08:24:37,549 [12   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 57.9707ms 200 text/css
+INFO  2019-01-07 08:24:37,549 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 50.6058ms 200 application/javascript
+INFO  2019-01-07 08:24:37,549 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 56.9539ms 200 application/javascript
+INFO  2019-01-07 08:24:37,549 [3    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 51.218ms 200 application/javascript
+DEBUG 2019-01-07 08:24:47,556 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2019-01-07 08:24:47,583 [1    ] Abp.Modules.AbpModuleManager             - Found 22 ABP modules in total.
+DEBUG 2019-01-07 08:24:47,602 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Precise.Web.Startup.PreciseWebHostModule, Precise.Web.Host, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-07 08:24:47,605 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Precise.PreciseWebCoreModule, Precise.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-07 08:24:47,605 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Precise.PreciseApplicationModule, Precise.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-07 08:24:47,605 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Precise.PreciseCoreModule, Precise.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-07 08:24:47,605 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=4.0.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-07 08:24:47,606 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=4.0.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-07 08:24:47,606 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=4.0.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-07 08:24:47,606 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.Ldap.AbpZeroLdapModule, Abp.Zero.Ldap, Version=4.0.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-07 08:24:47,606 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=4.0.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-07 08:24:47,607 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.MailKit.AbpMailKitModule, Abp.MailKit, Version=4.0.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-07 08:24:47,607 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Precise.PreciseWeChatModule, Precise.WeChat, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-07 08:24:47,608 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Precise.EntityFrameworkCore.PreciseEntityFrameworkCoreModule, Precise.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-07 08:24:47,608 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=4.0.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-07 08:24:47,608 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=4.0.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-07 08:24:47,608 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=4.0.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-07 08:24:47,608 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.IdentityServer4.AbpZeroCoreIdentityServerEntityFrameworkCoreModule, Abp.ZeroCore.IdentityServer4.EntityFrameworkCore, Version=4.0.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-07 08:24:47,608 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.IdentityServer4.AbpZeroCoreIdentityServerModule, Abp.ZeroCore.IdentityServer4, Version=4.0.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-07 08:24:47,609 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.SignalR.AbpAspNetCoreSignalRModule, Abp.AspNetCore.SignalR, Version=4.0.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-07 08:24:47,609 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=4.0.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-07 08:24:47,609 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=4.0.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-07 08:24:47,609 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Runtime.Caching.Redis.AbpRedisCacheModule, Abp.RedisCache, Version=4.0.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-07 08:24:47,609 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Hangfire.AbpHangfireAspNetCoreModule, Abp.HangFire.AspNetCore, Version=4.0.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-07 08:24:47,614 [1    ] Abp.Modules.AbpModuleManager             - 22 modules loaded.
+DEBUG 2019-01-07 08:24:47,665 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-01-07 08:24:47,665 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-01-07 08:24:47,665 [1    ] o.Configuration.LanguageManagementConfig - Converted Precise (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-01-07 08:24:47,665 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-01-07 08:24:47,976 [1    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: Precise.EntityFrameworkCore.PreciseDbContext, Precise.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-07 08:24:48,382 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2019-01-07 08:24:48,423 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2019-01-07 08:24:48,471 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2019-01-07 08:24:48,506 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Precise
+DEBUG 2019-01-07 08:24:48,531 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2019-01-07 08:24:48,560 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2019-01-07 08:24:48,599 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 2 classes define auto mapping attributes
+DEBUG 2019-01-07 08:24:48,599 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Precise.Web.Models.TokenAuth.ExternalLoginProviderInfoModel
+DEBUG 2019-01-07 08:24:48,604 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Precise.Friendships.Cache.FriendCacheItem
+DEBUG 2019-01-07 08:24:51,047 [1    ] enancy.SubscriptionExpirationCheckWorker - Start background worker: Precise.MultiTenancy.SubscriptionExpirationCheckWorker
+DEBUG 2019-01-07 08:24:51,048 [1    ] cy.SubscriptionExpireEmailNotifierWorker - Start background worker: Precise.MultiTenancy.SubscriptionExpireEmailNotifierWorker
+INFO  2019-01-07 08:24:51,535 [3    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://127.0.0.1:50538/  
+INFO  2019-01-07 08:24:51,803 [3    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Index", controller = "Home", area = ""}. Executing action Precise.Web.Controllers.HomeController.Index (Precise.Web.Host)
+INFO  2019-01-07 08:24:51,832 [3    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Precise.Web.Controllers.HomeController.Index (Precise.Web.Host) - Validation state: Valid
+INFO  2019-01-07 08:24:51,833 [3    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Precise.Web.Controllers.HomeController.Index (Precise.Web.Host), returned result Microsoft.AspNetCore.Mvc.RedirectResult in 0.1028ms.
+INFO  2019-01-07 08:24:51,837 [3    ] vc.Infrastructure.RedirectResultExecutor - Executing RedirectResult, redirecting to /swagger.
+INFO  2019-01-07 08:24:51,839 [3    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Precise.Web.Controllers.HomeController.Index (Precise.Web.Host) in 34.9496ms
+INFO  2019-01-07 08:24:51,849 [3    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 314.6172ms 302 
+INFO  2019-01-07 08:24:51,852 [3    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://127.0.0.1:50538/swagger/index.html  
+INFO  2019-01-07 08:24:51,913 [3    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 61.2925ms 200 text/html
+INFO  2019-01-07 08:24:59,033 [8    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://127.0.0.1:50538/swagger/v1/swagger.json  
+INFO  2019-01-07 08:24:59,053 [4    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://127.0.0.1:50538/swagger/favicon-32x32.png  
+INFO  2019-01-07 08:24:59,058 [4    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+INFO  2019-01-07 08:24:59,058 [4    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 5.5862ms 200 image/png
+INFO  2019-01-07 08:24:59,062 [3    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://127.0.0.1:50538/swagger/favicon-16x16.png  
+INFO  2019-01-07 08:24:59,063 [3    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/favicon-16x16.png'. Physical path: 'N/A'
+INFO  2019-01-07 08:24:59,063 [3    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.3992ms 200 image/png
+INFO  2019-01-07 08:24:59,325 [3    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 292.4017ms 200 application/json;charset=utf-8
+INFO  2019-01-07 08:25:20,853 [8    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://127.0.0.1:50538/api/TokenAuth/Authenticate application/json 50
+INFO  2019-01-07 08:25:20,863 [8    ] pNetCore.Cors.Infrastructure.CorsService - Policy execution failed.
+INFO  2019-01-07 08:25:20,863 [8    ] pNetCore.Cors.Infrastructure.CorsService - Request origin http://127.0.0.1:50538 does not have permission to access the resource.
+INFO  2019-01-07 08:25:20,887 [8    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Authenticate", controller = "TokenAuth", area = ""}. Executing action Precise.Web.Controllers.TokenAuthController.Authenticate (Precise.Web.Core)
+INFO  2019-01-07 08:25:20,888 [8    ] pNetCore.Cors.Infrastructure.CorsService - Policy execution failed.
+INFO  2019-01-07 08:25:20,888 [8    ] pNetCore.Cors.Infrastructure.CorsService - Request origin http://127.0.0.1:50538 does not have permission to access the resource.
+INFO  2019-01-07 08:25:21,353 [8    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Precise.Web.Controllers.TokenAuthController.Authenticate (Precise.Web.Core) with arguments (Precise.Web.Models.TokenAuth.AuthenticateModel) - Validation state: Valid
+INFO  2019-01-07 08:25:21,843 [8    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Precise.Web.Controllers.TokenAuthController.Authenticate (Precise.Web.Core), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 489.7466ms.
+INFO  2019-01-07 08:25:21,973 [14   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-01-07 08:25:21,980 [14   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Precise.Web.Controllers.TokenAuthController.Authenticate (Precise.Web.Core) in 1092.5487ms
+INFO  2019-01-07 08:25:21,981 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1128.0721ms 200 application/json; charset=utf-8

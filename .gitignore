@@ -1,1 +1,17 @@
+/Precise-Antd/node_modules
 
+/Precise-Antd/dist
+/Precise-Antd/.vscode
+
+/Precise-Antd/coverage
+/Precise-Antd/.idea
+
+/Precise-Antd/yarn.lock
+/Precise-Antd/package-lock.json
+
+/Precise-Antd/.temp/**
+
+/Precise-Core/.vs
+*bak
+
+*.log
