@@ -18,7 +18,9 @@ namespace Precise.Web.UiCustomization.Metronic
 
         protected async Task<string> GetSettingValueAsync(string settingName)
         {
-            return await SettingManager.GetSettingValueAsync(ThemeName + "." + settingName);
+            var ss = await SettingManager.GetSettingValueAsync(ThemeName + "." + settingName);
+            System.Console.WriteLine(ss);
+            return ss;
         }
 
         protected async Task<T> GetSettingValueAsync<T>(string settingName) where T : struct

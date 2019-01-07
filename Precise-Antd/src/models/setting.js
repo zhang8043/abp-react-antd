@@ -1,5 +1,6 @@
 import { message } from 'antd';
 import defaultSettings from '../defaultSettings';
+import globalService from '@/utils/GlobalServices';
 
 let lessNodesAppended;
 const updateTheme = primaryColor => {
@@ -68,6 +69,16 @@ export default {
   state: defaultSettings,
   reducers: {
     getSetting(state) {
+      const theme =globalService.sessionStore.getSessionStore().theme.baseSettings;
+      state = theme == null ? defaultSettings : {
+        navTheme: theme.layout.overallStyle,
+        primaryColor: theme.layout.themeColor,
+        layout: theme.menu.navigationMode,
+        contentWidth: theme.header.contentWidth,
+        fixedHeader: theme.header.fixedHeader,
+        autoHideHeader: theme.header.slidingHiddenHeader,
+        fixSiderbar: theme.menu.fixedMenu,
+      }
       const setting = {};
       const urlParams = new URL(window.location.href);
       Object.keys(state).forEach(key => {

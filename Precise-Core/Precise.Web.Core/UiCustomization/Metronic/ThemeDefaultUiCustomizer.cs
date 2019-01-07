@@ -61,13 +61,13 @@ namespace Precise.Web.UiCustomization.Metronic
         {
             await SettingManager.ChangeSettingForUserAsync(user, AppSettings.UiManagement.Theme, ThemeName);
 
-            await ChangeSettingForUserAsync(user, AppSettings.UiManagement.ThemeColor, settings.Layout.ThemeColor);
-            await ChangeSettingForUserAsync(user, AppSettings.UiManagement.OverallStyle, settings.Layout.OverallStyle);
+            await ChangeSettingForUserAsync(user, AppSettings.UiManagement.ThemeColor, settings.Layout.ThemeColor.ToString());
+            await ChangeSettingForUserAsync(user, AppSettings.UiManagement.OverallStyle, settings.Layout.OverallStyle.ToString());
             await ChangeSettingForUserAsync(user, AppSettings.UiManagement.Header.SlidingHiddenHeader, settings.Header.SlidingHiddenHeader.ToString());
             await ChangeSettingForUserAsync(user, AppSettings.UiManagement.Header.ContentWidth, settings.Header.ContentWidth);
             await ChangeSettingForUserAsync(user, AppSettings.UiManagement.Header.FixedHeader, settings.Header.FixedHeader.ToString());
-            await ChangeSettingForUserAsync(user, AppSettings.UiManagement.LeftAside.NavigationMode, settings.Menu.NavigationMode);
-            await ChangeSettingForUserAsync(user, AppSettings.UiManagement.LeftAside.FixedMenu, settings.Menu.NavigationMode);
+            await ChangeSettingForUserAsync(user, AppSettings.UiManagement.LeftAside.NavigationMode, settings.Menu.NavigationMode.ToString());
+            await ChangeSettingForUserAsync(user, AppSettings.UiManagement.LeftAside.FixedMenu, settings.Menu.NavigationMode.ToString());
             await ChangeSettingForUserAsync(user, AppSettings.UiManagement.Other.WeakMode, settings.Other.WeakMode.ToString());
             await ChangeSettingForUserAsync(user, AppSettings.UiManagement.Footer.FixedFooter, settings.Footer.FixedFooter.ToString());
         }
@@ -76,12 +76,12 @@ namespace Precise.Web.UiCustomization.Metronic
         {
             await SettingManager.ChangeSettingForTenantAsync(tenantId, AppSettings.UiManagement.Theme, settings.Theme);
 
-            await ChangeSettingForTenantAsync(tenantId, AppSettings.UiManagement.ThemeColor, settings.Layout.ThemeColor);
-            await ChangeSettingForTenantAsync(tenantId, AppSettings.UiManagement.OverallStyle, settings.Layout.OverallStyle);
+            await ChangeSettingForTenantAsync(tenantId, AppSettings.UiManagement.ThemeColor, settings.Layout.ThemeColor.ToString());
+            await ChangeSettingForTenantAsync(tenantId, AppSettings.UiManagement.OverallStyle, settings.Layout.OverallStyle.ToString());
             await ChangeSettingForTenantAsync(tenantId, AppSettings.UiManagement.Header.SlidingHiddenHeader, settings.Header.SlidingHiddenHeader.ToString());
             await ChangeSettingForTenantAsync(tenantId, AppSettings.UiManagement.Header.ContentWidth, settings.Header.ContentWidth);
             await ChangeSettingForTenantAsync(tenantId, AppSettings.UiManagement.Header.FixedHeader, settings.Header.FixedHeader.ToString());
-            await ChangeSettingForTenantAsync(tenantId, AppSettings.UiManagement.LeftAside.NavigationMode, settings.Menu.NavigationMode);
+            await ChangeSettingForTenantAsync(tenantId, AppSettings.UiManagement.LeftAside.NavigationMode, settings.Menu.NavigationMode.ToString());
             await ChangeSettingForTenantAsync(tenantId, AppSettings.UiManagement.LeftAside.FixedMenu, settings.Menu.FixedMenu.ToString());
             await ChangeSettingForTenantAsync(tenantId, AppSettings.UiManagement.Other.WeakMode, settings.Other.WeakMode.ToString());
             await ChangeSettingForTenantAsync(tenantId, AppSettings.UiManagement.Footer.FixedFooter, settings.Footer.FixedFooter.ToString());
@@ -91,12 +91,12 @@ namespace Precise.Web.UiCustomization.Metronic
         {
             await SettingManager.ChangeSettingForApplicationAsync(AppSettings.UiManagement.Theme, settings.Theme);
 
-            await ChangeSettingForApplicationAsync(AppSettings.UiManagement.ThemeColor, settings.Layout.ThemeColor);
-            await ChangeSettingForApplicationAsync(AppSettings.UiManagement.OverallStyle, settings.Layout.OverallStyle);
+            await ChangeSettingForApplicationAsync(AppSettings.UiManagement.ThemeColor, settings.Layout.ThemeColor.ToString());
+            await ChangeSettingForApplicationAsync(AppSettings.UiManagement.OverallStyle, settings.Layout.OverallStyle.ToString());
             await ChangeSettingForApplicationAsync(AppSettings.UiManagement.Header.SlidingHiddenHeader, settings.Header.SlidingHiddenHeader.ToString());
-            await ChangeSettingForApplicationAsync(AppSettings.UiManagement.Header.ContentWidth, settings.Header.ContentWidth);
+            await ChangeSettingForApplicationAsync(AppSettings.UiManagement.Header.ContentWidth, settings.Header.ContentWidth.ToString());
             await ChangeSettingForApplicationAsync(AppSettings.UiManagement.Header.FixedHeader, settings.Header.FixedHeader.ToString());
-            await ChangeSettingForApplicationAsync(AppSettings.UiManagement.LeftAside.NavigationMode, settings.Menu.NavigationMode);
+            await ChangeSettingForApplicationAsync(AppSettings.UiManagement.LeftAside.NavigationMode, settings.Menu.NavigationMode.ToString());
             await ChangeSettingForApplicationAsync(AppSettings.UiManagement.LeftAside.FixedMenu, settings.Menu.FixedMenu.ToString());
             await ChangeSettingForApplicationAsync(AppSettings.UiManagement.Other.WeakMode, settings.Other.WeakMode.ToString());
             await ChangeSettingForApplicationAsync(AppSettings.UiManagement.Footer.FixedFooter, settings.Footer.FixedFooter.ToString());
