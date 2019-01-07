@@ -6,10 +6,10 @@ import { Card, Row, Col, Icon, Avatar, Tag, Divider, Spin, Input } from 'antd';
 import GridContent from '@/components/PageHeaderWrapper/GridContent';
 import styles from './Center.less';
 
-@connect(({ loading, user, project }) => ({
+@connect(({ loading, global, project }) => ({
   listLoading: loading.effects['list/fetch'],
-  currentUser: user.currentUser,
-  currentUserLoading: loading.effects['user/fetchCurrent'],
+  currentUser: global.currentUser,
+  currentUserLoading: loading.effects['global/getCurrentLoginInformations'],
   project,
   projectLoading: loading.effects['project/fetchNotice'],
 }))
@@ -23,7 +23,7 @@ class Center extends PureComponent {
   componentDidMount() {
     const { dispatch } = this.props;
     dispatch({
-      type: 'user/fetchCurrent',
+      type: 'global/getCurrentLoginInformations',
     });
     dispatch({
       type: 'list/fetch',
@@ -127,31 +127,31 @@ class Center extends PureComponent {
               {currentUser && Object.keys(currentUser).length ? (
                 <div>
                   <div className={styles.avatarHolder}>
-                    <img alt="" src={currentUser.avatar} />
+                    <img alt="" src={currentUser.profilePictureId != null ? currentUser.profilePictureId : 'https://gw.alipayobjects.com/zos/rmsportal/BiazfanxmamNRoxxVxka.png'} />
                     <div className={styles.name}>{currentUser.name}</div>
-                    <div>{currentUser.signature}</div>
+                    <div>{currentUser.emailAddress}</div>
                   </div>
                   <div className={styles.detail}>
                     <p>
                       <i className={styles.title} />
-                      {currentUser.title}
+                      软件开发
                     </p>
                     <p>
                       <i className={styles.group} />
-                      {currentUser.group}
+                      黄河水利科学研究院-信息工程中心
                     </p>
                     <p>
                       <i className={styles.address} />
-                      {currentUser.geographic.province.label}
-                      {currentUser.geographic.city.label}
+                      河南省
+                      郑州
                     </p>
                   </div>
                   <Divider dashed />
                   <div className={styles.tags}>
                     <div className={styles.tagsTitle}>标签</div>
-                    {currentUser.tags.concat(newTags).map(item => (
+                    {/* {currentUser.tags.concat(newTags).map(item => (
                       <Tag key={item.key}>{item.label}</Tag>
-                    ))}
+                    ))} */}
                     {inputVisible && (
                       <Input
                         ref={this.saveInputRef}

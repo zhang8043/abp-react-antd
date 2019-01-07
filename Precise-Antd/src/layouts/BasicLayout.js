@@ -63,7 +63,10 @@ class BasicLayout extends React.PureComponent {
       route: { routes, authority },
     } = this.props;
     dispatch({
-      type: 'user/fetchCurrent',
+      type: 'global/GetAll',
+    });
+    dispatch({
+      type: 'global/getCurrentLoginInformations',
     });
     dispatch({
       type: 'setting/getSetting',
@@ -203,6 +206,7 @@ class BasicLayout extends React.PureComponent {
         </Layout>
       </Layout>
     );
+
     return (
       <React.Fragment>
         <DocumentTitle title={this.getPageTitle(pathname, breadcrumbNameMap)}>

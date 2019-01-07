@@ -1,4 +1,7 @@
 import { queryNotices } from '@/services/api';
+import globalService from '@/utils/GlobalServices';
+import appConst from '@/utils/appconst'
+import { getCurrentLoginInformation, GetAll, getUsessr } from '@/services/sessionStore';
 
 export default {
   namespace: 'global',
@@ -7,6 +10,7 @@ export default {
     collapsed: false,
     notices: [],
     loadedAllNotices: false,
+    currentUser: {},
   },
 
   effects: {
@@ -25,7 +29,7 @@ export default {
         state => state.global.notices.filter(item => !item.read).length
       );
       yield put({
-        type: 'user/changeNotifyCount',
+        type: 'changeNotifyCount',
         payload: {
           totalCount: data.length,
           unreadCount,
@@ -47,7 +51,7 @@ export default {
         state => state.global.notices.filter(item => !item.read).length
       );
       yield put({
-        type: 'user/changeNotifyCount',
+        type: 'changeNotifyCount',
         payload: {
           totalCount: data.length,
           unreadCount,
@@ -64,7 +68,7 @@ export default {
         state => state.global.notices.filter(item => !item.read).length
       );
       yield put({
-        type: 'user/changeNotifyCount',
+        type: 'changeNotifyCount',
         payload: {
           totalCount: count,
           unreadCount,
@@ -86,11 +90,27 @@ export default {
         payload: notices,
       });
       yield put({
-        type: 'user/changeNotifyCount',
+        type: 'changeNotifyCount',
         payload: {
           totalCount: notices.length,
           unreadCount: notices.filter(item => !item.read).length,
         },
+      });
+    },
+    *GetAll(_, { call }) {
+      const response = yield call(GetAll);
+      if (response != null && response.success) {
+        globalService.auth.setAuthority(appConst.authorization.allAuthorityName, response.result.auth.allPermissions);
+      }
+    },
+    *getCurrentLoginInformations(_, { call, put }) {
+      const response = yield call(getCurrentLoginInformation);
+      if (response != null && response.success) {
+        globalService.sessionStore.setSessionStore(response.result);
+      }
+      yield put({
+        type: 'saveCurrentUser',
+        payload: response.result.user,
       });
     },
   },
@@ -124,6 +144,22 @@ export default {
       return {
         ...state,
         loadedAllNotices: payload,
+      };
+    },
+    saveCurrentUser(state, action) {
+      return {
+        ...state,
+        currentUser: action.payload || {},
+      };
+    },
+    changeNotifyCount(state, action) {
+      return {
+        ...state,
+        currentUser: {
+          ...state.currentUser,
+          notifyCount: action.payload.totalCount,
+          unreadCount: action.payload.unreadCount,
+        },
       };
     },
   },

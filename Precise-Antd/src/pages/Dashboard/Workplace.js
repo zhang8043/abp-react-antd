@@ -37,12 +37,12 @@ const links = [
   },
 ];
 
-@connect(({ user, project, activities, chart, loading }) => ({
-  currentUser: user.currentUser,
+@connect(({ global, project, activities, chart, loading }) => ({
+  currentUser: global.currentUser,
   project,
   activities,
   chart,
-  currentUserLoading: loading.effects['user/fetchCurrent'],
+  currentUserLoading: loading.effects['global/getCurrentLoginInformations'],
   projectLoading: loading.effects['project/fetchNotice'],
   activitiesLoading: loading.effects['activities/fetchList'],
 }))
@@ -50,7 +50,7 @@ class Workplace extends PureComponent {
   componentDidMount() {
     const { dispatch } = this.props;
     dispatch({
-      type: 'user/fetchCurrent',
+      type: 'global/getCurrentLoginInformations',
     });
     dispatch({
       type: 'project/fetchNotice',
@@ -121,7 +121,7 @@ class Workplace extends PureComponent {
       currentUser && Object.keys(currentUser).length ? (
         <div className={styles.pageHeaderContent}>
           <div className={styles.avatar}>
-            <Avatar size="large" src={currentUser.avatar} />
+            <Avatar size="large" src={currentUser.profilePictureId != null ? currentUser.profilePictureId : 'https://gw.alipayobjects.com/zos/rmsportal/BiazfanxmamNRoxxVxka.png'} />
           </div>
           <div className={styles.content}>
             <div className={styles.contentTitle}>
@@ -130,7 +130,7 @@ class Workplace extends PureComponent {
               ，祝你开心每一天！
             </div>
             <div>
-              {currentUser.title} |{currentUser.group}
+              软件开发 | 黄河水利科学研究院-信息工程中心
             </div>
           </div>
         </div>
@@ -215,7 +215,7 @@ class Workplace extends PureComponent {
               bordered={false}
               bodyStyle={{ padding: 0 }}
             >
-              <EditableLinkGroup onAdd={() => {}} links={links} linkElement={Link} />
+              <EditableLinkGroup onAdd={() => { }} links={links} linkElement={Link} />
             </Card>
             <Card
               style={{ marginBottom: 24 }}

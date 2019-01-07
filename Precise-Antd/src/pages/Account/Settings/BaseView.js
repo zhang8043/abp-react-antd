@@ -51,8 +51,8 @@ const validatorPhone = (rule, value, callback) => {
   callback();
 };
 
-@connect(({ user }) => ({
-  currentUser: user.currentUser,
+@connect(({ global }) => ({
+  currentUser: global.currentUser,
 }))
 @Form.create()
 class BaseView extends Component {
@@ -71,8 +71,8 @@ class BaseView extends Component {
 
   getAvatarURL() {
     const { currentUser } = this.props;
-    if (currentUser.avatar) {
-      return currentUser.avatar;
+    if (currentUser && currentUser.profilePictureId) {
+      return currentUser.profilePictureId;
     }
     const url = 'https://gw.alipayobjects.com/zos/rmsportal/BiazfanxmamNRoxxVxka.png';
     return url;

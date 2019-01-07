@@ -15,7 +15,7 @@ const { Tab, UserName, Password, Mobile, Captcha, Submit } = Login;
 class LoginPage extends Component {
   state = {
     type: 'account',
-    autoLogin: true,
+    rememberClient: true,
   };
 
   onTabChange = type => {
@@ -55,7 +55,7 @@ class LoginPage extends Component {
 
   changeAutoLogin = e => {
     this.setState({
-      autoLogin: e.target.checked,
+      rememberClient: e.target.checked,
     });
   };
 
@@ -65,7 +65,7 @@ class LoginPage extends Component {
 
   render() {
     const { login, submitting } = this.props;
-    const { type, autoLogin } = this.state;
+    const { type, rememberClient } = this.state;
     return (
       <div className={styles.main}>
         <Login
@@ -82,7 +82,7 @@ class LoginPage extends Component {
               !submitting &&
               this.renderMessage(formatMessage({ id: 'app.login.message-invalid-credentials' }))}
             <UserName
-              name="userName"
+              name="userNameOrEmailAddress"
               placeholder={`${formatMessage({ id: 'app.login.userName' })}: admin or user`}
               rules={[
                 {
@@ -140,7 +140,7 @@ class LoginPage extends Component {
             />
           </Tab>
           <div>
-            <Checkbox checked={autoLogin} onChange={this.changeAutoLogin}>
+            <Checkbox checked={rememberClient} onChange={this.changeAutoLogin}>
               <FormattedMessage id="app.login.remember-me" />
             </Checkbox>
             <a style={{ float: 'right' }} href="">

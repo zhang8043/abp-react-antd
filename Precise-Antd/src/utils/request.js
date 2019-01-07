@@ -3,6 +3,8 @@ import { notification } from 'antd';
 import router from 'umi/router';
 import hash from 'hash.js';
 import { isAntdPro } from './utils';
+import globalService from './GlobalServices'
+import AppConsts from './appconst'
 
 const codeMessage = {
   200: '服务器成功返回请求的数据。',
@@ -23,18 +25,34 @@ const codeMessage = {
 };
 
 const checkStatus = response => {
-  if (response.status >= 200 && response.status < 300) {
+  if (response.status >= 200 && response.status < 300)
     return response;
-  }
-  const errortext = codeMessage[response.status] || response.statusText;
-  notification.error({
-    message: `请求错误 ${response.status}: ${response.url}`,
-    description: errortext,
-  });
-  const error = new Error(errortext);
-  error.name = response.status;
-  error.response = response;
-  throw error;
+  else if (response.status == 401)
+    return router.push('/accounts/login');
+  else
+    return response.json()
+      .then(json => {
+        if (response.ok) {
+          return json
+        } else {
+          const errortext = codeMessage[response.status] || response.statusText;
+          const error = new Error(errortext);
+          if (json.success == false) {
+            notification.error({
+              message: `${json.error.message}`,
+              description: json.error.details,
+            });
+          } else {
+            notification.error({
+              message: `请求错误 ${response.status}: ${response.url}`,
+              description: errortext,
+            });
+            error.name = response.status;
+          }
+          error.response = response;
+          throw error;
+        }
+      })
 };
 
 const cachedSave = (response, hashcode) => {
@@ -57,9 +75,9 @@ const cachedSave = (response, hashcode) => {
 };
 
 /**
- * Requests a URL, returning a promise.
+ * 请求URL，返回承诺。
  *
- * @param  {string} url       The URL we want to request
+ * @param  {string} url       要请求的网址
  * @param  {object} [option] The options we want to pass to "fetch"
  * @return {object}           An object containing either "data" or "err"
  */
@@ -69,8 +87,8 @@ export default function request(url, option) {
     ...option,
   };
   /**
-   * Produce fingerprints based on url and parameters
-   * Maybe url has the same parameters
+   * 根据网址和参数生成指纹
+   * 也许url具有相同的参数
    */
   const fingerprint = url + (options.body ? JSON.stringify(options.body) : '');
   const hashcode = hash
@@ -82,25 +100,22 @@ export default function request(url, option) {
     credentials: 'include',
   };
   const newOptions = { ...defaultOptions, ...options };
-  if (
-    newOptions.method === 'POST' ||
-    newOptions.method === 'PUT' ||
-    newOptions.method === 'DELETE'
-  ) {
-    if (!(newOptions.body instanceof FormData)) {
-      newOptions.headers = {
-        Accept: 'application/json',
-        'Content-Type': 'application/json; charset=utf-8',
-        ...newOptions.headers,
-      };
-      newOptions.body = JSON.stringify(newOptions.body);
-    } else {
-      // newOptions.body is FormData
-      newOptions.headers = {
-        Accept: 'application/json',
-        ...newOptions.headers,
-      };
-    }
+  const token = 'Bearer ' + globalService.auth.getToken();
+
+  if (!(newOptions.body instanceof FormData)) {
+    newOptions.headers = {
+      Accept: 'application/json',
+      'Authorization': token,
+      'Content-Type': 'application/json; charset=utf-8',
+      ...newOptions.headers,
+    };
+    newOptions.body = JSON.stringify(newOptions.body);
+  } else {
+    newOptions.headers = {
+      'Authorization': token,
+      Accept: 'application/json',
+      ...newOptions.headers,
+    };
   }
 
   const expirys = options.expirys && 60;

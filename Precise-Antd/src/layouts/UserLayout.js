@@ -43,6 +43,15 @@ class UserLayout extends React.PureComponent {
   //   return title;
   // }
 
+  componentDidMount() {
+    window.g_app._store.dispatch({
+      type: 'global/GetAll',
+    });
+    window.g_app._store.dispatch({
+      type: 'global/getCurrentLoginInformations',
+    });
+  }
+
   render() {
     const { children } = this.props;
     return (
