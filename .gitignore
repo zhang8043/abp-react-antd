@@ -10,8 +10,11 @@
 /Precise-Antd/package-lock.json
 
 /Precise-Antd/.temp/**
+.umi
+.umi-production
 
 /Precise-Core/.vs
+
 *bak
 
 *.log
