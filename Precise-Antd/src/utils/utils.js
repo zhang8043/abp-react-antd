@@ -177,6 +177,17 @@ export function formatWan(val) {
   return result;
 }
 
+export function truncateStringWithPostfix(str, maxLength, postfix) {
+  postfix = postfix || '...';
+  if (!str || !str.length || str.length <= maxLength) {
+    return str;
+  }
+  if (maxLength <= postfix.length) {
+    return postfix.substr(0, maxLength);
+  }
+  return str.substr(0, maxLength - postfix.length) + postfix;
+}
+
 // 给官方演示站点用，用于关闭真实开发环境不需要使用的特性
 export function isAntdPro() {
   return window.location.hostname === 'preview.pro.ant.design';

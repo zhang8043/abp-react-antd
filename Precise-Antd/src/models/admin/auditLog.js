@@ -8,7 +8,7 @@ export default {
     },
 
     effects: {
-        *getUsers({ payload }, { call, put }) {
+        *getAuditLogs({ payload }, { call, put }) {
             const response = yield call(getAuditLogs, payload);
             yield put({
                 type: 'save',

@@ -89,12 +89,11 @@ export default function request(url, option, parameter) {
   if (parameter) {
     url += "?";
     for (var item in parameter) {
-      if (item !== undefined && parameter[item] !== null&& parameter[item] !== "")
+      if (item !== undefined && parameter[item] !== null && parameter[item] !== ""&& parameter[item] !== undefined)
         url += item + "=" + encodeURIComponent("" + parameter[item]) + "&";
     }
     url = url.replace(/[?&]$/, "");
   }
-  console.log(url);
   /**
    * 根据网址和参数生成指纹
    * 也许url具有相同的参数

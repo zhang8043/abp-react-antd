@@ -2,23 +2,32 @@ import React, { PureComponent } from 'react';
 import { connect } from 'dva';
 import { Card, Col, Row, Button, Divider, Table, Tag, Dropdown, Menu, Modal } from 'antd';
 
-@connect(({ user }) => ({
+@connect(({ loading,user }) => ({
+    listLoading: loading.effects['auditlog/getAuditLogs'],
     user,
 }))
 class UserList extends PureComponent {
     state = {
-        Filter:"",
+        Filter: "",
         maxResultCount: 100,
         SkipCount: 0
     };
 
     componentDidMount() {
+        this.getUsers();
+    }
+
+    getUsers() {
         const { dispatch } = this.props;
         dispatch({
             type: 'user/getUsers',
             payload: this.state,
         });
     }
+
+    handleTableChange = (pagination) => {
+        this.setState({ SkipCount: (pagination.current - 1) * this.state.MaxResultCount }, async () => this.getUsers());
+    };
 
     render() {
         const columns = [
@@ -42,6 +51,7 @@ class UserList extends PureComponent {
             }];
 
         const {
+            listLoading,
             user: { data },
         } = this.props;
 
@@ -56,6 +66,8 @@ class UserList extends PureComponent {
                             pagination={{ pageSize: 10, total: data == undefined ? 0 : data.totalCount, defaultCurrent: 1 }}
                             loading={data == undefined ? true : false}
                             dataSource={data == undefined ? [] : data.items}
+                            onChange={this.handleTableChange}
+                            loading={listLoading}
                         />
                     </Col>
                 </Row>
