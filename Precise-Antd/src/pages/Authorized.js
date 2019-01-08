@@ -9,11 +9,11 @@ const Authority = getAuthority();
 const Authorized = RenderAuthorized(Authority);
 
 if (globalService.sessionStore.getSessionStore().user == null) {
-  router.push('/user/login');
+  router.push('/accounts/login');
 }
 
 export default ({ children }) => (
-  <Authorized authority={children.props.route.authority} noMatch={<Redirect to="/user/login" />}>
+  <Authorized authority={children.props.route.authority} noMatch={<Redirect to="/accounts/login" />}>
     {children}
   </Authorized>
 );

@@ -75,7 +75,7 @@ export default {
       reloadAuthorized();
       yield put(
         routerRedux.push({
-          pathname: '/user/login',
+          pathname: '/accounts/login',
           search: stringify({
             redirect: window.location.href,
           }),

@@ -1,13 +1,13 @@
 export default [
   // user
   {
-    path: '/user',
+    path: '/accounts',
     component: '../layouts/UserLayout',
     routes: [
-      { path: '/user', redirect: '/user/login' },
-      { path: '/user/login', component: './User/Login' },
-      { path: '/user/register', component: './User/Register' },
-      { path: '/user/register-result', component: './User/RegisterResult' },
+      { path: '/accounts', redirect: '/Account/Login/login' },
+      { path: '/accounts/login', component: './Account/Login/Login' },
+      { path: '/accounts/register', component: './Account/Register/Register' },
+      { path: '/accounts/register-result', component: './Account/RegisterResult/RegisterResult' },
     ],
   },
   // app
@@ -17,12 +17,17 @@ export default [
     Routes: ['src/pages/Authorized'],
     routes: [
       // dashboard
-      { path: '/', redirect: '/dashboard/analysis' },
+      { path: '/', redirect: '/dashboard/workplace' },
       {
         path: '/dashboard',
         name: 'dashboard',
         icon: 'dashboard',
         routes: [
+          {
+            path: '/dashboard/workplace',
+            name: 'workplace',
+            component: './Dashboard/Workplace',
+          },
           {
             path: '/dashboard/analysis',
             authority: ['admin', 'user'],
@@ -34,56 +39,31 @@ export default [
             name: 'monitor',
             component: './Dashboard/Monitor',
           },
+        ],
+      },
+      // arcgis
+      {
+        path: '/arcgis',
+        icon: 'precise-17',
+        name: 'arcgis',
+        routes: [
           {
-            path: '/dashboard/workplace',
-            name: 'workplace',
-            component: './Dashboard/Workplace',
+            path: '/arcgis/arcgismap',
+            name: 'arcgismap',
+            component: './ArcgisMap',
           },
         ],
       },
-      // forms
+      // WorkFlow
       {
-        path: '/form',
-        icon: 'form',
-        name: 'form',
+        path: '/workflow',
+        icon: 'precise-navicon-lcpz',
+        name: 'workflow',
         routes: [
           {
-            path: '/form/basic-form',
-            name: 'basicform',
-            component: './Forms/BasicForm',
-          },
-          {
-            path: '/form/step-form',
-            name: 'stepform',
-            component: './Forms/StepForm',
-            hideChildrenInMenu: true,
-            routes: [
-              {
-                path: '/form/step-form',
-                redirect: '/form/step-form/info',
-              },
-              {
-                path: '/form/step-form/info',
-                name: 'info',
-                component: './Forms/StepForm/Step1',
-              },
-              {
-                path: '/form/step-form/confirm',
-                name: 'confirm',
-                component: './Forms/StepForm/Step2',
-              },
-              {
-                path: '/form/step-form/result',
-                name: 'result',
-                component: './Forms/StepForm/Step3',
-              },
-            ],
-          },
-          {
-            path: '/form/advanced-form',
-            name: 'advancedform',
-            authority: ['admin'],
-            component: './Forms/AdvancedForm',
+            path: '/workflow/editwork',
+            name: 'editwork',
+            component: './WorkFlow/EditWork',
           },
         ],
       },
@@ -137,70 +117,36 @@ export default [
         ],
       },
       {
-        path: '/profile',
-        name: 'profile',
-        icon: 'profile',
-        routes: [
-          // profile
-          {
-            path: '/profile/basic',
-            name: 'basic',
-            component: './Profile/BasicProfile',
-          },
-          {
-            path: '/profile/advanced',
-            name: 'advanced',
-            authority: ['admin'],
-            component: './Profile/AdvancedProfile',
-          },
-        ],
+        path: '/system/user',
+        name: 'user',
+        icon: 'team',
+        component: './User/UserList',
       },
       {
-        name: 'result',
-        icon: 'check-circle-o',
-        path: '/result',
-        routes: [
-          // result
-          {
-            path: '/result/success',
-            name: 'success',
-            component: './Result/Success',
-          },
-          { path: '/result/fail', name: 'fail', component: './Result/Error' },
-        ],
+        path: '/system/role',
+        name: 'role',
+        icon: 'idcard',
+        component: './Role/RoleList',
       },
       {
-        name: 'exception',
-        icon: 'warning',
-        path: '/exception',
-        routes: [
-          // exception
-          {
-            path: '/exception/403',
-            name: 'not-permission',
-            component: './Exception/403',
-          },
-          {
-            path: '/exception/404',
-            name: 'not-find',
-            component: './Exception/404',
-          },
-          {
-            path: '/exception/500',
-            name: 'server-error',
-            component: './Exception/500',
-          },
-          {
-            path: '/exception/trigger',
-            name: 'trigger',
-            hideInMenu: true,
-            component: './Exception/TriggerException',
-          },
-        ],
+        path: '/system/organization',
+        name: 'organization',
+        icon: 'cluster',
+        component: './OrganizationUnit/OrganizationUnitsList',
       },
       {
-        name: 'account',
-        icon: 'user',
+        path: '/system/notification',
+        name: 'notification',
+        icon: 'notification',
+        component: './Notification/NotificationList',
+      },
+      {
+        path: '/system/auditLog',
+        name: 'auditLog',
+        icon: 'precise-rizhi',
+        component: './AuditLog/AuditLogList',
+      },
+      {
         path: '/account',
         routes: [
           {
@@ -252,6 +198,33 @@ export default [
                 component: './Account/Settings/NotificationView',
               },
             ],
+          },
+        ],
+      },
+      {
+        path: '/exception',
+        routes: [
+          // exception
+          {
+            path: '/exception/403',
+            name: 'not-permission',
+            component: './Exception/403',
+          },
+          {
+            path: '/exception/404',
+            name: 'not-find',
+            component: './Exception/404',
+          },
+          {
+            path: '/exception/500',
+            name: 'server-error',
+            component: './Exception/500',
+          },
+          {
+            path: '/exception/trigger',
+            name: 'trigger',
+            hideInMenu: true,
+            component: './Exception/TriggerException',
           },
         ],
       },

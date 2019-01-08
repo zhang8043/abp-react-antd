@@ -9,6 +9,13 @@ import result from './zh-CN/result';
 import settingDrawer from './zh-CN/settingDrawer';
 import settings from './zh-CN/settings';
 import pwa from './zh-CN/pwa';
+import workflow from './zh-CN/workflow';
+import auditLog from './zh-CN/auditLog';
+import notification from './zh-CN/notification';
+import organization from './zh-CN/organization';
+import role from './zh-CN/role';
+import user from './zh-CN/user';
+import arcgismap from './zh-CN/arcgismap';
 
 export default {
   'navBar.lang': '语言',
@@ -30,4 +37,11 @@ export default {
   ...settingDrawer,
   ...settings,
   ...pwa,
+  ...workflow,
+  ...auditLog,
+  ...notification,
+  ...organization,
+  ...role,
+  ...user,
+  ...arcgismap,
 };

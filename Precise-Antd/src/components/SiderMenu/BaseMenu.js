@@ -6,6 +6,7 @@ import { urlToList } from '../_utils/pathTools';
 import { getMenuMatches } from './SiderMenuUtils';
 import { isUrl } from '@/utils/utils';
 import styles from './index.less';
+import IconFont from '@/components/IconFont';
 
 const { SubMenu } = Menu;
 
@@ -14,6 +15,9 @@ const { SubMenu } = Menu;
 //   icon: 'http://demo.com/icon.png',
 //   icon: <Icon type="setting" />,
 const getIcon = icon => {
+  if(typeof icon === 'string' && icon.match("precise")){
+    return <IconFont type={icon} />
+  }
   if (typeof icon === 'string' && isUrl(icon)) {
     return <img src={icon} alt="icon" className={styles.icon} />;
   }
