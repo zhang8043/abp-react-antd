@@ -11,11 +11,11 @@ import settings from './zh-CN/settings';
 import pwa from './zh-CN/pwa';
 import workflow from './zh-CN/workflow';
 import auditLog from './zh-CN/auditLog';
-import notification from './zh-CN/notification';
 import organization from './zh-CN/organization';
 import role from './zh-CN/role';
 import user from './zh-CN/user';
 import arcgismap from './zh-CN/arcgismap';
+import admin from './zh-CN/admin';
 
 export default {
   'navBar.lang': '语言',
@@ -39,9 +39,9 @@ export default {
   ...pwa,
   ...workflow,
   ...auditLog,
-  ...notification,
   ...organization,
   ...role,
   ...user,
   ...arcgismap,
+  ...admin,
 };

@@ -78,14 +78,23 @@ const cachedSave = (response, hashcode) => {
  * 请求URL，返回承诺。
  *
  * @param  {string} url       要请求的网址
- * @param  {object} [option] The options we want to pass to "fetch"
- * @return {object}           An object containing either "data" or "err"
+ * @param  {object} [option]  我们想要传递给“fetch”的选项
+ * @return {object}           包含“data”或“err”的对象
  */
-export default function request(url, option) {
+export default function request(url, option, parameter) {
   const options = {
     expirys: isAntdPro(),
     ...option,
   };
+  if (parameter) {
+    url += "?";
+    for (var item in parameter) {
+      if (item !== undefined && parameter[item] !== null&& parameter[item] !== "")
+        url += item + "=" + encodeURIComponent("" + parameter[item]) + "&";
+    }
+    url = url.replace(/[?&]$/, "");
+  }
+  console.log(url);
   /**
    * 根据网址和参数生成指纹
    * 也许url具有相同的参数
@@ -133,6 +142,7 @@ export default function request(url, option) {
       sessionStorage.removeItem(`${hashcode}:timestamp`);
     }
   }
+
   return fetch(url, newOptions)
     .then(checkStatus)
     .then(response => cachedSave(response, hashcode))

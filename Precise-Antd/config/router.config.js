@@ -17,26 +17,28 @@ export default [
     Routes: ['src/pages/Authorized'],
     routes: [
       // dashboard
-      { path: '/', redirect: '/dashboard/workplace' },
+      { path: '/', redirect: '/analysis' },
+      {
+        path: '/analysis',
+        name: 'analysis',
+        icon: 'precise-shouye',
+        component: './Dashboard/Analysis',
+      },
       {
         path: '/dashboard',
         name: 'dashboard',
-        icon: 'dashboard',
+        icon: 'precise-gongzuotai',
         routes: [
           {
             path: '/dashboard/workplace',
             name: 'workplace',
+            icon: 'precise-zhuzhuangtu',
             component: './Dashboard/Workplace',
-          },
-          {
-            path: '/dashboard/analysis',
-            authority: ['admin', 'user'],
-            name: 'analysis',
-            component: './Dashboard/Analysis',
           },
           {
             path: '/dashboard/monitor',
             name: 'monitor',
+            icon: 'precise-jiankong',
             component: './Dashboard/Monitor',
           },
         ],
@@ -50,20 +52,8 @@ export default [
           {
             path: '/arcgis/arcgismap',
             name: 'arcgismap',
+            icon: 'precise-changyongshili',
             component: './ArcgisMap',
-          },
-        ],
-      },
-      // WorkFlow
-      {
-        path: '/workflow',
-        icon: 'precise-navicon-lcpz',
-        name: 'workflow',
-        routes: [
-          {
-            path: '/workflow/editwork',
-            name: 'editwork',
-            component: './WorkFlow/EditWork',
           },
         ],
       },
@@ -117,34 +107,60 @@ export default [
         ],
       },
       {
-        path: '/system/user',
-        name: 'user',
-        icon: 'team',
-        component: './User/UserList',
-      },
-      {
-        path: '/system/role',
-        name: 'role',
-        icon: 'idcard',
-        component: './Role/RoleList',
-      },
-      {
-        path: '/system/organization',
-        name: 'organization',
-        icon: 'cluster',
-        component: './OrganizationUnit/OrganizationUnitsList',
-      },
-      {
-        path: '/system/notification',
-        name: 'notification',
-        icon: 'notification',
-        component: './Notification/NotificationList',
-      },
-      {
-        path: '/system/auditLog',
-        name: 'auditLog',
-        icon: 'precise-rizhi',
-        component: './AuditLog/AuditLogList',
+        path: '/admin',
+        name: 'admin',
+        authority: ['Pages.Administration'],
+        icon: 'precise-xitongguanli',
+        routes: [
+          {
+            path: '/admin/organization',
+            name: 'organization',
+            authority: ['Pages.Administration.OrganizationUnits'],
+            icon: 'cluster',
+            component: './Admin/OrganizationUnit',
+          },
+          {
+            path: '/admin/role',
+            name: 'role',
+            authority: ['Pages.Administration.Roles'],
+            icon: 'idcard',
+            component: './Admin/Role',
+          },
+          {
+            path: '/admin/user',
+            name: 'user',
+            authority: ['Pages.Administration.Users'],
+            icon: 'user',
+            component: './Admin/User',
+          },
+          {
+            path: '/admin/workflow',
+            name: 'workflow',
+            icon: 'precise-navicon-lcpz',
+            component: './Admin/WorkFlow/EditWork',
+          },
+          {
+            path: '/admin/auditLog',
+            name: 'auditLog',
+            authority: ['Pages.Administration.AuditLogs'],
+            icon: 'precise-rizhi',
+            component: './Admin/AuditLog',
+          },
+          {
+            path: '/admin/ui',
+            name: 'ui',
+            authority: ['Pages.Administration.UiCustomization'],
+            icon: 'precise-yanjing',
+            component: './Admin/UiCustomization',
+          },
+          {
+            path: '/admin/settings',
+            name: 'settings',
+            authority: ['Pages.Administration.Tenant.Settings', 'Pages.Administration.Host.Settings'],
+            icon: 'precise-shezhi',
+            component: './Admin/Settings',
+          },
+        ],
       },
       {
         path: '/account',

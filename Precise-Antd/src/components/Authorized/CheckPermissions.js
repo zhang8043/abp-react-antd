@@ -29,14 +29,22 @@ const checkPermissions = (authority, currentAuthority, target, Exception) => {
     if (authority.indexOf(currentAuthority) >= 0) {
       return target;
     }
-    if (Array.isArray(currentAuthority)) {
-      for (let i = 0; i < currentAuthority.length; i += 1) {
-        const element = currentAuthority[i];
-        if (authority.indexOf(element) >= 0) {
+    if (typeof currentAuthority === 'object') {
+      for (let i = 0; i < authority.length; i += 1) {
+        const element = authority[i];
+        if (currentAuthority[element] != undefined) {
           return target;
         }
       }
     }
+    // if (Array.isArray(currentAuthority)) {
+    //   for (let i = 0; i < currentAuthority.length; i += 1) {
+    //     const element = currentAuthority[i];
+    //     if (authority.indexOf(element) >= 0) {
+    //       return target;
+    //     }
+    //   }
+    // }
     return Exception;
   }
 
@@ -45,14 +53,19 @@ const checkPermissions = (authority, currentAuthority, target, Exception) => {
     if (authority === currentAuthority) {
       return target;
     }
-    if (Array.isArray(currentAuthority)) {
-      for (let i = 0; i < currentAuthority.length; i += 1) {
-        const element = currentAuthority[i];
-        if (authority === element) {
-          return target;
-        }
+    if (typeof currentAuthority === 'object') {
+      if (currentAuthority[authority] != undefined) {
+        return target;
       }
     }
+    // if (Array.isArray(currentAuthority)) {
+    //   for (let i = 0; i < currentAuthority.length; i += 1) {
+    //     const element = currentAuthority[i];
+    //     if (authority === element) {
+    //       return target;
+    //     }
+    //   }
+    // }
     return Exception;
   }
 
