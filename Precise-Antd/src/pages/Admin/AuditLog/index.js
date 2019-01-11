@@ -28,13 +28,7 @@ class AuditLogList extends Component {
         formValues: {
             StartDate: dateRanges[0],
             EndDate: dateRanges[1],
-            UserName: "",
-            ServiceName: "",
-            MethodName: "",
-            HasException: null,
-            MinExecutionDuration: 0,
-            MaxExecutionDuration: 100,
-            MaxResultCount: 10,
+            MaxResultCount: 6,
             SkipCount: 0,
         },
         expandForm: false,
@@ -78,7 +72,16 @@ class AuditLogList extends Component {
 
 
     handleFormReset = () => {
-
+        const { form, dispatch } = this.props;
+        form.resetFields();
+        this.setState({
+          formValues: {
+            StartDate: dateRanges[0],
+            EndDate: dateRanges[1],
+            MaxResultCount: 6,
+            SkipCount: 0,
+          },
+        },this.getAuditLogs());
     };
 
     toggleForm = () => {
@@ -191,8 +194,8 @@ class AuditLogList extends Component {
         const columns = [
             {
                 title: '用户名', dataIndex: 'exception', key: 'exception',
-                render: (text, row, index) => {
-                    if (text)
+                render: (value, row, index) => {
+                    if (value)
                         return <Icon type="close-circle" theme="twoTone" twoToneColor="#F5222D" />
                     else
                         return <Icon type="check-circle" theme="twoTone" twoToneColor="#1890FF" />
@@ -200,8 +203,8 @@ class AuditLogList extends Component {
             },
             {
                 title: '时间', dataIndex: 'executionTime', key: 'executionTime',
-                render: (text, row, index) => {
-                    return moment(text).format('YYYY年MM月D日 h:mm:ss')
+                render: (value, row, index) => {
+                    return moment(value).format('YYYY年MM月D日 h:mm:ss')
                 },
             },
             { title: '用户名', dataIndex: 'userName', key: 'userName', },
@@ -209,16 +212,16 @@ class AuditLogList extends Component {
             { title: '操作', dataIndex: 'methodName', key: 'methodName', },
             {
                 title: '持续时间', dataIndex: 'executionDuration', key: 'executionDuration',
-                render: (text, row, index) => {
-                    return text + "ms";
+                render: (value, row, index) => {
+                    return value + "ms";
                 },
             },
             { title: 'IP地址', dataIndex: 'clientIpAddress', key: 'clientIpAddress', },
             {
                 title: '浏览器', dataIndex: 'browserInfo', key: 'browserInfo',
-                render: (text, row, index) => {
-                    return (<Tooltip title={text}>
-                        {truncateStringWithPostfix(text, 20)}
+                render: (value, row, index) => {
+                    return (<Tooltip title={value}>
+                        {truncateStringWithPostfix(value, 20)}
                     </Tooltip>);
                 },
             },

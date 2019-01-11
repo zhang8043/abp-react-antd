@@ -2,6 +2,7 @@ import moment from 'moment';
 import React from 'react';
 import nzh from 'nzh/cn';
 import { parse, stringify } from 'qs';
+import * as _ from 'lodash';
 
 export function fixedZero(val) {
   return val * 1 < 10 ? `0${val}` : val;
@@ -191,4 +192,46 @@ export function truncateStringWithPostfix(str, maxLength, postfix) {
 // 给官方演示站点用，用于关闭真实开发环境不需要使用的特性
 export function isAntdPro() {
   return window.location.hostname === 'preview.pro.ant.design';
+}
+
+export function createTree(array, parentIdProperty, idProperty, parentIdValue, childrenProperty, fieldMappings) {
+  let tree = [];
+
+  let nodes = _.filter(array, [parentIdProperty, parentIdValue]);
+  _.forEach(nodes, node => {
+    let newNode = {
+      data: node
+    };
+
+    mapFields(node, newNode, fieldMappings);
+
+    newNode[childrenProperty] = createTree(
+      array,
+      parentIdProperty,
+      idProperty,
+      node[idProperty],
+      childrenProperty,
+      fieldMappings
+    );
+
+    tree.push(newNode);
+  });
+
+  return tree;
+}
+
+function mapFields(node, newNode, fieldMappings) {
+  _.forEach(fieldMappings, fieldMapping => {
+    if (!fieldMapping['target']) {
+      return;
+    }
+
+    if (fieldMapping.hasOwnProperty('value')) {
+      newNode[fieldMapping['target']] = fieldMapping['value'];
+    } else if (fieldMapping['source']) {
+      newNode[fieldMapping['target']] = node[fieldMapping['source']];
+    } else if (fieldMapping['targetFunction']) {
+      newNode[fieldMapping['target']] = fieldMapping['targetFunction'](node);
+    }
+  });
 }
