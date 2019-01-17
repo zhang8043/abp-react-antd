@@ -1,5 +1,14 @@
 ﻿# ASP.NET Boilerplate + React + Ant Design Pro
- 
+
+# 项目简介：
+
+* abp-react-antd是一套基于ASP.NET Boilerplate + React + Ant Design Pro开发的框架，源代码完全开源。
+* 采用主流框架，容易上手，简单易学，学习成本低。可完全实现二次开发、基本满足80%项目需求。
+* 操作权限控制精密细致，对所有管理链接都进行权限验证，可控制到导航菜单、功能按钮。
+* 提高开发效率及质量。常用类封装，日志、缓存、验证、字典、文件、邮件、,Excel。等等，目前兼容浏览器（IE8+、Chrome、Firefox、360浏览器等）
+
+# 技术介绍：
+
 ## 什么是ASP.NET Boilerplate？
 
 ASP.NET Boilerplate是专为新的现代Web应用程序设计的通用**应用程序框架**。它使用已经**熟悉的工具**并实现围绕它们的**最佳实践**，为您提供SOLID**开发体验**。
@@ -37,3 +46,4 @@ React是一个用于构建用户界面的JavaScript库。
 * **UI 测试**：自动化测试保障前端产品质量
 
 <a href="https://pro.ant.design/docs/getting-started-cn" target="_blank">**Ant Design Pro官方文档**</a>
+
