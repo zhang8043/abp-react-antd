@@ -1,6 +1,6 @@
 ﻿# ASP.NET Boilerplate + React + Ant Design Pro
  
-## 什么是ABP？
+## 什么是ASP.NET Boilerplate？
 
 ASP.NET Boilerplate是专为新的现代Web应用程序设计的通用**应用程序框架**。它使用已经**熟悉的工具**并实现围绕它们的**最佳实践**，为您提供SOLID**开发体验**。
 <a href="https://aspnetboilerplate.com/Pages/Documents/Module-System" target="_blank">**ASP.NET Boilerplate官方文档**</a>
