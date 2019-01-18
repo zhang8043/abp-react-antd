@@ -10,7 +10,6 @@ D:\代码管理\Asp_Net\Precise\Precise-Core\Precise.Common\obj\Debug\netcoreapp
 D:\abp-react-ant\Precise-Core\Precise.Common\bin\Debug\netcoreapp2.1\Precise.Common.deps.json
 D:\abp-react-ant\Precise-Core\Precise.Common\bin\Debug\netcoreapp2.1\Precise.Common.dll
 D:\abp-react-ant\Precise-Core\Precise.Common\bin\Debug\netcoreapp2.1\Precise.Common.pdb
-D:\abp-react-ant\Precise-Core\Precise.Common\obj\Debug\netcoreapp2.1\Precise.Common.csprojAssemblyReference.cache
 D:\abp-react-ant\Precise-Core\Precise.Common\obj\Debug\netcoreapp2.1\Precise.Common.csproj.CoreCompileInputs.cache
 D:\abp-react-ant\Precise-Core\Precise.Common\obj\Debug\netcoreapp2.1\Precise.Common.AssemblyInfoInputs.cache
 D:\abp-react-ant\Precise-Core\Precise.Common\obj\Debug\netcoreapp2.1\Precise.Common.AssemblyInfo.cs
