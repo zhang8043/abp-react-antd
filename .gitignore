@@ -13,8 +13,21 @@
 .umi
 .umi-production
 
-/Precise-Core/.vs
-
 *bak
 
 *.log
+
+obj
+bin
+
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+.vs/
