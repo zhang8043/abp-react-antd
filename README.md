@@ -47,3 +47,51 @@ React是一个用于构建用户界面的JavaScript库。
 
 <a href="https://pro.ant.design/docs/getting-started-cn" target="_blank">**Ant Design Pro官方文档**</a>
 
+# 开发步骤
+
+* 项目下载完成，准备配置项目
+* 根目录中的 Precise-Antd是前端React目录，Precise-Core是后台的目录
+
+## 后端解决方案初始化配置
+>* 打开项目前，请确保已经安装 **.NET CORE 2.1** 版本，下载地址：<a href="https://dotnet.microsoft.com/download/dotnet-core/2.1" target="_blank">**.NET Core**</a>
+
+>* 还原nuget包
+
+>* 项目数据库连接字符串和跨域的基本配置
+
+>* 将数据库连接字符串修改为你的连接字符串 (注意:默认数据库为 SQL Server ，最低要求 2012 版本)
+
+>* 修改项目调试启动配置信息
+
+>* 初始化数据库
+
+>* 将 .Web.Host 设置为启动项目
+
+>* 打开程序包管理控制台,并设置默认项目为 .EntityFrameworkCore
+
+>* 输入命令，迁移数据库: 
+```
+    update-database
+```
+>* 如果没有用过EFCore Code First做迁移，请先查阅资料<a href="https://docs.microsoft.com/zh-cn/ef/core/managing-schemas/migrations/" target="_blank">官方文档</a>
+
+>* 如果你的环境没有问题，这个时候只需要 Ctrl+F5 就能运行，运行成功后就能在浏览器看到API界面了
+
+## 前端解决方案初始化配置
+>* 进入项目中的Precise-Antd目录
+```
+    $ yarn 或 npm install
+```
+
+>* 运行项目
+>记得先启动后台
+```
+    $ npm start
+```
+>* 启动调试，访问  <a href="http://127.0.0.1:8000" target="_blank">http://127.0.0.1:8000</a> 查看效果。
+
+>* 构建和部署
+```
+    $ npm run build
+```
+>该命令会将所有文件编译到 `dist` 目录下
