@@ -13,6 +13,7 @@ import {
 import PageHeaderWrapper from '@/components/PageHeaderWrapper';
 import styles from './index.less';
 import moment from 'moment';
+import DropOption from '@/components/DropOption';
 
 const FormItem = Form.Item;
 
@@ -108,19 +109,13 @@ class RoleList extends Component {
         );
     }
 
-    render() {
-        function handleMenuClick(e) {
-            message.info('Click on menu item.');
-            console.log('click', e);
+    handleMenuClick(record, e) {
+        if (e.key === '1') {
+            console.log("修改" + e.key);
         }
+    }
 
-        const menu = (
-            <Menu onClick={handleMenuClick}>
-                <Menu.Item key="1"><Icon type="user" />1st menu item</Menu.Item>
-                <Menu.Item key="2"><Icon type="user" />2nd menu item</Menu.Item>
-                <Menu.Item key="3"><Icon type="user" />3rd item</Menu.Item>
-            </Menu>
-        );
+    render() {
         const columns = [
             { title: '角色名称', dataIndex: 'displayName', key: 'displayName', },
             {
@@ -151,11 +146,13 @@ class RoleList extends Component {
                 title: '操作', key: 'action',
                 render: (value, row, index) => {
                     return (
-                        <Dropdown overlay={menu}>
-                            <Button type="primary" style={{ marginLeft: 8 }}>
-                                操作 <Icon type="down" />
-                            </Button>
-                        </Dropdown>);
+                        <DropOption
+                            onMenuClick={e => this.handleMenuClick(row, e)}
+                            menuOptions={[
+                                { key: '1', name: `修改` },
+                            ]}
+                        />
+                    );
                 },
             }];
 
@@ -170,7 +167,7 @@ class RoleList extends Component {
                     <div className={styles.tableList}>
                         <div className={styles.tableListForm}>{this.renderSimpleForm()}</div>
                         <div className={styles.tableListOperator}>
-
+                            12
                         </div>
                         <Table
                             rowKey={record => record.id}

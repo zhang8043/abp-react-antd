@@ -11,6 +11,7 @@ import {
     TreeSelect,
 } from 'antd';
 import PageHeaderWrapper from '@/components/PageHeaderWrapper';
+import DropOption from '@/components/DropOption';
 import styles from './index.less';
 import moment from 'moment';
 
@@ -46,7 +47,7 @@ class UserList extends PureComponent {
 
         dispatch({
             type: 'role/getRoles',
-            payload: null,
+            permission: null,
         });
     }
 
@@ -211,30 +212,22 @@ class UserList extends PureComponent {
         return expandForm ? this.renderAdvancedForm() : this.renderSimpleForm();
     }
 
-    render() {
-        function handleMenuClick(e) {
-            if (e.key.match("modify")) {
-                return message.info(e.key.replace("modify", ""));
-            }
-            if (e.key.match("permission")) {
-                return message.info("权限");
-            }
-            if (e.key.match("unlock")) {
-                return message.info("解锁");
-            }
-            if (e.key.match("delete")) {
-                return message.info("删除");
-            }
+    handleMenuClick(record, e) {
+        if (e.key === '0') {
+            message.info(e.item.props.children);
+        } else if (e.key === '1') {
+            message.info(e.item.props.children);
+        } else if (e.key === '2') {
+            message.info(e.item.props.children);
+        } else if (e.key === '3') {
+            message.info(e.item.props.children);
+        } else if (e.key === '4') {
+            message.info(e.item.props.children);
         }
+        console.log(record);
+    }
 
-        const menu = (key) => (
-            <Menu onClick={handleMenuClick}>
-                <Menu.Item key={"modify" + key}><Icon type="user" />修改</Menu.Item>
-                <Menu.Item key={"permission" + key}><Icon type="user" />权限</Menu.Item>
-                <Menu.Item key={"unlock" + key}><Icon type="user" />解锁</Menu.Item>
-                <Menu.Item key={"delete" + key}><Icon type="user" />删除</Menu.Item>
-            </Menu>
-        );
+    render() {
         const columns = [
             { title: '姓名', dataIndex: 'name', key: 'name', },
             { title: '用户名', dataIndex: 'userName', key: 'userName', },
@@ -286,11 +279,17 @@ class UserList extends PureComponent {
                 title: '操作', key: 'action',
                 render: (value, row, index) => {
                     return (
-                        <Dropdown overlay={menu(value.id)}>
-                            <Button type="primary" style={{ marginLeft: 8 }}>
-                                操作 <Icon type="down" />
-                            </Button>
-                        </Dropdown>);
+                        <DropOption
+                            onMenuClick={e => this.handleMenuClick(row, e)}
+                            menuOptions={[
+                                { key: '0', name: `使用这个用户登录` },
+                                { key: '1', name: `修改` },
+                                { key: '2', name: `权限` },
+                                { key: '3', name: `修改` },
+                                { key: '4', name: `删除` },
+                            ]}
+                        />
+                    );
                 },
             }];
 

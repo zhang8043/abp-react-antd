@@ -236,7 +236,6 @@ class AuditLogList extends Component {
 
     auditLogView() {
         const { auditLogViews } = this.state;
-        console.log(auditLogViews);
         return (
             <Drawer
                 width={640}
@@ -365,9 +364,10 @@ class AuditLogList extends Component {
             {
                 title: '浏览器', dataIndex: 'browserInfo', key: 'browserInfo',
                 render: (value, row, index) => {
-                    return (<Tooltip title={value}>
-                        {truncateStringWithPostfix(value, 20)}
-                    </Tooltip>);
+                    return (
+                        <Tooltip title={value}>
+                            {truncateStringWithPostfix(value, 20)}
+                        </Tooltip>);
                 },
             },
         ];

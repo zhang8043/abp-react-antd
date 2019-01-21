@@ -1,9 +1,18 @@
 import React, { Component } from 'react';
 import * as ReactDOM from 'react-dom';
-import { Card, Button, Icon } from 'antd';
+import { Card, Drawer, Form, Button, Col, Row, Input, Select, DatePicker, Icon, } from 'antd';
 import styles from './index.less';
 import esriLoader from 'esri-loader'
 
+import dxsj from '@/assets/map/dxsj.png';
+import qxsj from '@/assets/map/qxsj.png';
+import slgc from '@/assets/map/slgc.png';
+import swsj from '@/assets/map/swsj.png';
+import tdsj from '@/assets/map/tdsj.png';
+import trsj from '@/assets/map/trsj.png';
+import zbsj from '@/assets/map/zbsj.png';
+
+@Form.create()
 class ArcgisMap extends Component {
 
     constructor(props) {
@@ -93,10 +102,98 @@ class ArcgisMap extends Component {
             view.ui.add(toggle, "bottom-right");
         })
     }
+
+    openQueryMenu = (res) => {
+        console.log(res);
+        this.setState({
+            visible: true,
+        });
+    };
+
+    onClose = () => {
+        this.setState({
+            visible: false,
+        });
+    };
+
     render() {
+
+        const {
+            form: { getFieldDecorator },
+        } = this.props;
+
+
         return (
             <div>
                 <div id="mapDiv" style={this.state}></div>
+                <div id="container" className={styles.container}>
+                    <div id="dock">
+                        <ul>
+                            <li>
+                                <span>气象数据</span>
+                                <a href="javascript:void(0);" onClick={() => this.openQueryMenu('qxsj')}><img src={qxsj}></img></a>
+                            </li>
+                            <li>
+                                <span>水文数据</span>
+                                <a href="javascript:void(0);" onClick={() => this.openQueryMenu('swsj')}><img src={swsj}></img></a>
+                            </li>
+                            <li>
+                                <span>植被数据</span>
+                                <a href="javascript:void(0);" onClick={() => this.openQueryMenu('zbsj')}><img src={zbsj}></img></a>
+                            </li>
+                            <li>
+                                <span>土壤数据</span>
+                                <a href="javascript:void(0);" onClick={() => this.openQueryMenu('trsj')}><img src={trsj}></img></a>
+                            </li>
+                            <li>
+                                <span>地形数据</span>
+                                <a href="javascript:void(0);" onClick={() => this.openQueryMenu('dxsj')}><img src={dxsj}></img></a>
+                            </li>
+                            <li>
+                                <span>土地利用数据</span>
+                                <a href="javascript:void(0);" onClick={() => this.openQueryMenu('tdsj')}><img src={tdsj}></img></a>
+                            </li>
+                            <li>
+                                <span>水利工程数据</span>
+                                <a href="javascript:void(0);" onClick={() => this.openQueryMenu('slgc')}><img src={slgc}></img></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <Drawer
+                    title="数据查询"
+                    placement="left"
+                    width={350}
+                    closable={false}
+                    onClose={this.onClose}
+                    visible={this.state.visible}
+                >
+                    <Form layout="vertical" hideRequiredMark>
+                        <Row gutter={16}>
+                            <Col span={12}>
+                                <Form.Item label="Name">
+                                    {getFieldDecorator('name', {
+                                        rules: [{ required: true, message: 'Please enter user name' }],
+                                    })(<Input placeholder="Please enter user name" />)}
+                                </Form.Item>
+                            </Col>
+                            <Col span={12}>
+                                <Form.Item label="Url">
+                                    {getFieldDecorator('url', {
+                                        rules: [{ required: true, message: 'Please enter url' }],
+                                    })(
+                                        <Input
+                                            style={{ width: '100%' }}
+                                            addonBefore="http://"
+                                            addonAfter=".com"
+                                            placeholder="Please enter url"
+                                        />
+                                    )}
+                                </Form.Item>
+                            </Col>
+                        </Row>
+                    </Form>
+                </Drawer>
             </div>
         )
     }

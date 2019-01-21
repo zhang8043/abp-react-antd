@@ -1,4 +1,4 @@
-import { getRoles } from '@/services/admin/role';
+import { getRoles, getRoleForEdit, createOrUpdateRole, deleteRole } from '@/services/admin/role';
 
 export default {
     namespace: 'role',
@@ -14,6 +14,15 @@ export default {
                 type: 'save',
                 payload: response,
             });
+        },
+        *getRoleForEdit({ payload }, { call, put }) {
+            const response = yield call(getRoleForEdit, payload);
+        },
+        *createOrUpdateRole({ payload }, { call, put }) {
+            const response = yield call(createOrUpdateRole, payload);
+        },
+        *deleteRole({ payload }, { call, put }) {
+            const response = yield call(deleteRole, payload);
         },
     },
 

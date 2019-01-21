@@ -28,3 +28,66 @@
     background: #0079c1;
     color: #e4e4e4;
   }
+
+  
+.container #dock {
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+/*底部托盘*/
+.container {
+  z-index: 999;
+  position: fixed;
+  bottom: 0px;
+  text-align: center;
+  right: 25%;
+  height: 80px;
+  left: 25%;
+  width: 50%;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 30px 30px 0 0;
+}
+
+  .container li {
+      list-style-type: none;
+      display: inline-block;
+      position: relative;
+  }
+
+      .container li img {
+          margin: 0 1em;
+          width: 50px;
+          height: 50px;
+          -webkit-box-reflect: below 2px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.7, transparent), to(rgba(255, 255, 255, .5)));
+          -webkit-transition: all 0.3s;
+          -webkit-transform-origin: 40% 70%;
+      }
+
+      .container li:hover img {
+          -webkit-transform: scale(2);
+          margin: 0 2em;
+      }
+
+      .container li:hover + li img,
+      .container li.prev img {
+          -webkit-transform: scale(1.5);
+          margin: 0 1.5em;
+      }
+
+      .container li span {
+          display: none;
+          position: absolute;
+          bottom: 100px;
+          left: 0;
+          width: 100%;
+          background-color: #222;
+          padding: 4px 0;
+          border-radius: 7px;
+      }
+
+      .container li:hover span {
+          display: block;
+          color: #fff;
+      }
