@@ -107,11 +107,11 @@ export default {
       const response = yield call(getCurrentLoginInformation);
       if (response != null && response.success) {
         globalService.sessionStore.setSessionStore(response.result);
+        yield put({
+          type: 'saveCurrentUser',
+          payload: response.result.user,
+        });
       }
-      yield put({
-        type: 'saveCurrentUser',
-        payload: response.result.user,
-      });
     },
   },
 

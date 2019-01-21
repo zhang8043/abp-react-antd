@@ -1,23 +1,55 @@
 import React, { Component } from 'react';
 import {
-    Card, Col, Row, Button, Divider, Table, Tag, Dropdown, Menu, Form, Modal,
+    Card, Col, Row, Button, Divider, Table, Tag, List, Dropdown, Menu, Form, Modal,
     DatePicker,
     InputNumber,
     Input,
     Select,
     Icon,
     Tooltip,
+    message,
+    Drawer
 } from 'antd';
 import { connect } from 'dva';
 import moment from 'moment';
 import { truncateStringWithPostfix } from '@/utils/utils';
 import PageHeaderWrapper from '@/components/PageHeaderWrapper';
 import styles from './index.less';
+import { tuple } from 'antd/lib/_util/type';
 
 const FormItem = Form.Item;
 const { RangePicker } = DatePicker;
 const dateRanges = [moment().subtract(7, "day").format('YYYY-MM-D h:mm:ss.sssssss'), moment().format('YYYY-MM-D h:mm:ss.sssssss')];
 
+const DescriptionItem = ({ title, content }) => (
+    <div
+        style={{
+            fontSize: 14,
+            lineHeight: '22px',
+            marginBottom: 7,
+            color: 'rgba(0,0,0,0.65)',
+        }}
+    >
+        <p
+            style={{
+                marginRight: 8,
+                display: 'inline-block',
+                color: 'rgba(0,0,0,0.85)',
+            }}
+        >
+            {title}:
+      </p>
+        {content}
+    </div>
+);
+
+const pStyle = {
+    fontSize: 16,
+    color: 'rgba(0,0,0,0.85)',
+    lineHeight: '24px',
+    display: 'block',
+    marginBottom: 16,
+};
 @Form.create()
 @connect(({ auditlog, loading }) => ({
     auditlog,
@@ -32,6 +64,8 @@ class AuditLogList extends Component {
             SkipCount: 0,
         },
         expandForm: false,
+        visible: false,
+        auditLogViews: null
     };
 
     componentDidMount() {
@@ -75,13 +109,13 @@ class AuditLogList extends Component {
         const { form, dispatch } = this.props;
         form.resetFields();
         this.setState({
-          formValues: {
-            StartDate: dateRanges[0],
-            EndDate: dateRanges[1],
-            MaxResultCount: 6,
-            SkipCount: 0,
-          },
-        },this.getAuditLogs());
+            formValues: {
+                StartDate: dateRanges[0],
+                EndDate: dateRanges[1],
+                MaxResultCount: 6,
+                SkipCount: 0,
+            },
+        }, this.getAuditLogs());
     };
 
     toggleForm = () => {
@@ -190,10 +224,121 @@ class AuditLogList extends Component {
         return expandForm ? this.renderAdvancedForm() : this.renderSimpleForm();
     }
 
+    getFormattedParameters(parameters) {
+        const self = this;
+        try {
+            const json = JSON.parse(parameters);
+            return JSON.stringify(json, null, 4);
+        } catch (e) {
+            return parameters;
+        }
+    }
+
+    auditLogView() {
+        const { auditLogViews } = this.state;
+        console.log(auditLogViews);
+        return (
+            <Drawer
+                width={640}
+                placement="right"
+                closable={false}
+                onClose={this.onClose}
+                visible={this.state.visible}
+            >
+                {auditLogViews == null ? "" :
+                    <div>
+                        <p style={{ ...pStyle, marginBottom: 24 }}>
+                            {
+                                auditLogViews.exception ?
+                                    <Icon type="close-circle" theme="twoTone" twoToneColor="#F5222D" />
+                                    :
+                                    <Icon type="check-circle" theme="twoTone" twoToneColor="#1890FF" />
+                            }
+                            审计日志详情</p>
+                        <Divider />
+                        <p style={pStyle}>用户信息</p>
+                        <Row>
+                            <Col span={8}>
+                                <DescriptionItem title="用户名" content={auditLogViews.userName} />{' '}
+                            </Col>
+                            <Col span={8}>
+                                <DescriptionItem title="客户端" content={auditLogViews.clientName} />
+                            </Col>
+                            <Col span={8}>
+                                <DescriptionItem title="IP地址" content={auditLogViews.clientIpAddress} />
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col span={24}>
+                                <DescriptionItem title="浏览器" content={auditLogViews.browserInfo} />
+                            </Col>
+                        </Row>
+                        <Divider />
+                        <p style={pStyle}>操作信息</p>
+                        <Row>
+                            <Col span={12}>
+                                <DescriptionItem title="服务" content={auditLogViews.serviceName} />
+                            </Col>
+                            <Col span={12}>
+                                <DescriptionItem title="操作" content={auditLogViews.methodName} />
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col span={12}>
+                                <DescriptionItem title="时间" content={moment(auditLogViews.serviceName).format('YYYY年MM月D日 h:mm:ss')} />
+                            </Col>
+                            <Col span={12}>
+                                <DescriptionItem title="持续时间" content={auditLogViews.executionDuration + "ms"} />
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col span={24}>
+                                <DescriptionItem title="参数" content={
+                                    <Card>
+                                        <p>{this.getFormattedParameters(auditLogViews.parameters)}</p>
+                                    </Card>
+                                } />
+                            </Col>
+                        </Row>
+                        <Divider />
+                        <p style={pStyle}>自定义数据</p>
+                        <Row>
+                            <Col span={24}>
+                                <Card>
+                                    <p>{auditLogViews.customData == null ? "无" : auditLogViews.customData}</p>
+                                </Card>
+                            </Col>
+                        </Row>
+                    </div>
+                }
+            </Drawer>
+        );
+    }
+
+    showDrawer = (value) => {
+        this.setState({
+            visible: true,
+            auditLogViews: value
+        });
+    }
+
+    onClose = () => {
+        this.setState({
+            visible: false,
+            auditLogViews: null
+        });
+    }
+
     render() {
         const columns = [
             {
-                title: '用户名', dataIndex: 'exception', key: 'exception',
+                title: '查看', key: 'action',
+                render: (value) => (
+                    <Button type="primary" shape="circle" icon="search" onClick={() => this.showDrawer(value)} />
+                ),
+            },
+            {
+                title: '', dataIndex: 'exception', key: 'exception',
                 render: (value, row, index) => {
                     if (value)
                         return <Icon type="close-circle" theme="twoTone" twoToneColor="#F5222D" />
@@ -225,14 +370,7 @@ class AuditLogList extends Component {
                     </Tooltip>);
                 },
             },
-            {
-                title: '操作', key: 'action',
-                render: () => (
-                    <span>
-                        <a href="javascript:;">查看</a>
-                    </span>
-                ),
-            }];
+        ];
 
         const {
             listLoading,
@@ -258,6 +396,7 @@ class AuditLogList extends Component {
                             loading={listLoading}
                         />
                     </div>
+                    {this.auditLogView()}
                 </Card>
             </PageHeaderWrapper>
         );

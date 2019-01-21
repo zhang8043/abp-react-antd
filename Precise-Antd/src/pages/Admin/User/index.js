@@ -60,7 +60,7 @@ class UserList extends PureComponent {
 
     handleTableChange = (pagination) => {
         const { formValues } = this.state;
-        formValues.SkipCount = (pagination.current - 1) * this.state.formValues.MaxResultCount;
+        formValues.SkipCount = (pagination.current - 1) * formValues.MaxResultCount;
         this.setState({ formValues: formValues }, this.getAuditLogs());
     };
 

@@ -55,6 +55,7 @@
     "rc-animate": "^2.4.4",
     "react": "^16.6.3",
     "react-container-query": "^0.11.0",
+    "react-contexify": "^4.0.1",
     "react-copy-to-clipboard": "^5.0.1",
     "react-document-title": "^2.0.3",
     "react-dom": "^16.6.3",
