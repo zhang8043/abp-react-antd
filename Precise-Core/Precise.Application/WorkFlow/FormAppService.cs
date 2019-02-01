@@ -16,13 +16,13 @@ namespace Precise.WorkFlow
     [AbpAuthorize]
     public class FormAppService : PreciseAppServiceBase, IFormAppService
     {
-        private readonly IRepository<Form, string> _entityRepository;
+        private readonly IRepository<Form, string> _formRepository;
 
         public FormAppService(
-        IRepository<Form, string> entityRepository
+        IRepository<Form, string> formRepository
         )
         {
-            _entityRepository = entityRepository;
+            _formRepository = formRepository;
         }
 
         /// <summary>
@@ -30,7 +30,7 @@ namespace Precise.WorkFlow
         ///</summary>
         public async Task<PagedResultDto<FormListDto>> GetPaged(GetFormsInput input)
         {
-            var query = _entityRepository.GetAll();
+            var query = _formRepository.GetAll();
             var count = await query.CountAsync();
             var entityList = await query
                     .OrderBy(input.Sorting).AsNoTracking()
@@ -45,7 +45,7 @@ namespace Precise.WorkFlow
         /// </summary>
         public async Task<FormListDto> GetById(EntityDto<string> input)
         {
-            var entity = await _entityRepository.GetAsync(input.Id);
+            var entity = await _formRepository.GetAsync(input.Id);
             return entity.MapTo<FormListDto>();
         }
 
@@ -58,7 +58,7 @@ namespace Precise.WorkFlow
             FormEditDto editDto;
             if (!string.IsNullOrEmpty(input.Id))
             {
-                var entity = await _entityRepository.GetAsync(input.Id);
+                var entity = await _formRepository.GetAsync(input.Id);
                 editDto = entity.MapTo<FormEditDto>();
             }
             else
@@ -90,7 +90,7 @@ namespace Precise.WorkFlow
         protected virtual async Task<FormEditDto> Create(FormEditDto input)
         {
             var entity = input.MapTo<Form>();
-            entity = await _entityRepository.InsertAsync(entity);
+            entity = await _formRepository.InsertAsync(entity);
             return entity.MapTo<FormEditDto>();
         }
 
@@ -99,9 +99,9 @@ namespace Precise.WorkFlow
         /// </summary>
         protected virtual async Task Update(FormEditDto input)
         {
-            var entity = await _entityRepository.GetAsync(input.Id);
+            var entity = await _formRepository.GetAsync(input.Id);
             input.MapTo(entity);
-            await _entityRepository.UpdateAsync(entity);
+            await _formRepository.UpdateAsync(entity);
         }
 
         /// <summary>
@@ -109,7 +109,7 @@ namespace Precise.WorkFlow
         /// </summary>
         public async Task Delete(EntityDto<string> input)
         {
-            await _entityRepository.DeleteAsync(input.Id);
+            await _formRepository.DeleteAsync(input.Id);
         }
 
         /// <summary>
@@ -117,7 +117,7 @@ namespace Precise.WorkFlow
         /// </summary>
         public async Task BatchDelete(List<string> input)
         {
-            await _entityRepository.DeleteAsync(s => input.Contains(s.Id));
+            await _formRepository.DeleteAsync(s => input.Contains(s.Id));
         }
     }
 }

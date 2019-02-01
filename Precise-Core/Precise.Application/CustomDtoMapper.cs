@@ -19,6 +19,8 @@ using Precise.Authorization.Users.Dto;
 using Precise.Authorization.Users.Profile.Dto;
 using Precise.Chat;
 using Precise.Chat.Dto;
+using Precise.DataItems;
+using Precise.DataItems.Dtos;
 using Precise.Editions;
 using Precise.Editions.Dto;
 using Precise.Friendships;
@@ -156,6 +158,16 @@ namespace Precise
             configuration.CreateMap<FormListDto, Form>();
             configuration.CreateMap<FormEditDto, Form>();
             configuration.CreateMap<Form, FormEditDto>();
+
+            configuration.CreateMap<ItemsDetailEntity, ItemsDetailEntityListDto>();
+            configuration.CreateMap<ItemsDetailEntityListDto, ItemsDetailEntity>();
+            configuration.CreateMap<ItemsDetailEntityEditDto, ItemsDetailEntity>();
+            configuration.CreateMap<ItemsDetailEntity, ItemsDetailEntityEditDto>();
+
+            configuration.CreateMap<ItemsEntity, ItemsEntityListDto>();
+            configuration.CreateMap<ItemsEntityListDto, ItemsEntity>();
+            configuration.CreateMap<ItemsEntityEditDto, ItemsEntity>();
+            configuration.CreateMap<ItemsEntity, ItemsEntityEditDto>();
         }
     }
 }

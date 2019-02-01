@@ -15,13 +15,13 @@ namespace Precise.WorkFlow
     [AbpAuthorize]
     public class FlowInstanceTransitionHistoryAppService : PreciseAppServiceBase, IFlowInstanceTransitionHistoryAppService
     {
-        private readonly IRepository<FlowInstanceTransitionHistory, string> _entityRepository;
+        private readonly IRepository<FlowInstanceTransitionHistory, string> _flowInstanceTransitionHistoryRepository;
 
         public FlowInstanceTransitionHistoryAppService(
-        IRepository<FlowInstanceTransitionHistory, string> entityRepository
+        IRepository<FlowInstanceTransitionHistory, string> flowInstanceTransitionHistoryRepository
         )
         {
-            _entityRepository = entityRepository;
+            _flowInstanceTransitionHistoryRepository = flowInstanceTransitionHistoryRepository;
         }
 
         /// <summary>
@@ -29,7 +29,7 @@ namespace Precise.WorkFlow
         ///</summary>
         public async Task<PagedResultDto<FlowInstanceTransitionHistoryListDto>> GetPaged(GetFlowInstanceTransitionHistorysInput input)
         {
-            var query = _entityRepository.GetAll();
+            var query = _flowInstanceTransitionHistoryRepository.GetAll();
             var count = await query.CountAsync();
             var entityList = await query
                     .OrderBy(input.Sorting).AsNoTracking()
@@ -44,7 +44,7 @@ namespace Precise.WorkFlow
         /// </summary>
         public async Task<FlowInstanceTransitionHistoryListDto> GetById(EntityDto<string> input)
         {
-            var entity = await _entityRepository.GetAsync(input.Id);
+            var entity = await _flowInstanceTransitionHistoryRepository.GetAsync(input.Id);
             return entity.MapTo<FlowInstanceTransitionHistoryListDto>();
         }
 
@@ -57,7 +57,7 @@ namespace Precise.WorkFlow
             FlowInstanceTransitionHistoryEditDto editDto;
             if (!string.IsNullOrEmpty(input.Id))
             {
-                var entity = await _entityRepository.GetAsync(input.Id);
+                var entity = await _flowInstanceTransitionHistoryRepository.GetAsync(input.Id);
                 editDto = entity.MapTo<FlowInstanceTransitionHistoryEditDto>();
             }
             else
@@ -89,7 +89,7 @@ namespace Precise.WorkFlow
         protected virtual async Task<FlowInstanceTransitionHistoryEditDto> Create(FlowInstanceTransitionHistoryEditDto input)
         {
             var entity = input.MapTo<FlowInstanceTransitionHistory>();
-            entity = await _entityRepository.InsertAsync(entity);
+            entity = await _flowInstanceTransitionHistoryRepository.InsertAsync(entity);
             return entity.MapTo<FlowInstanceTransitionHistoryEditDto>();
         }
 
@@ -98,9 +98,9 @@ namespace Precise.WorkFlow
         /// </summary>
         protected virtual async Task Update(FlowInstanceTransitionHistoryEditDto input)
         {
-            var entity = await _entityRepository.GetAsync(input.Id);
+            var entity = await _flowInstanceTransitionHistoryRepository.GetAsync(input.Id);
             input.MapTo(entity);
-            await _entityRepository.UpdateAsync(entity);
+            await _flowInstanceTransitionHistoryRepository.UpdateAsync(entity);
         }
 
         /// <summary>
@@ -108,7 +108,7 @@ namespace Precise.WorkFlow
         /// </summary>
         public async Task Delete(EntityDto<string> input)
         {
-            await _entityRepository.DeleteAsync(input.Id);
+            await _flowInstanceTransitionHistoryRepository.DeleteAsync(input.Id);
         }
 
         /// <summary>
@@ -116,7 +116,7 @@ namespace Precise.WorkFlow
         /// </summary>
         public async Task BatchDelete(List<string> input)
         {
-            await _entityRepository.DeleteAsync(s => input.Contains(s.Id));
+            await _flowInstanceTransitionHistoryRepository.DeleteAsync(s => input.Contains(s.Id));
         }
     }
 }
