@@ -33,6 +33,8 @@ using Precise.MultiTenancy.Payments.Dto;
 using Precise.Notifications.Dto;
 using Precise.Organizations.Dto;
 using Precise.Sessions.Dto;
+using Precise.WorkFlow;
+using Precise.WorkFlow.Dtos;
 
 namespace Precise
 {
@@ -128,6 +130,18 @@ namespace Precise
             configuration.CreateMap<OrganizationUnit, OrganizationUnitDto>();
 
             /* ADD YOUR OWN CUSTOM AUTOMAPPER MAPPINGS HERE */
+
+            //工作流
+            configuration.CreateMap<FlowInstance, FlowInstanceListDto>();
+            configuration.CreateMap<FlowInstanceListDto, FlowInstance>();
+            configuration.CreateMap<FlowInstanceEditDto, FlowInstance>();
+            configuration.CreateMap<FlowInstance, FlowInstanceEditDto>();
+
+            configuration.CreateMap<FlowScheme, FlowSchemeListDto>();
+            configuration.CreateMap<FlowSchemeListDto, FlowScheme>();
+            configuration.CreateMap<FlowSchemeEditDto, FlowScheme>();
+            configuration.CreateMap<FlowScheme, FlowSchemeEditDto>();
+
         }
     }
 }

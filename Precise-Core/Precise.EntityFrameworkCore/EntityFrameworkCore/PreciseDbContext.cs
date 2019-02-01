@@ -4,12 +4,14 @@ using Microsoft.EntityFrameworkCore;
 using Precise.Authorization.Roles;
 using Precise.Authorization.Users;
 using Precise.Chat;
+using Precise.DataItems;
 using Precise.Editions;
 using Precise.Friendships;
 using Precise.MultiTenancy;
 using Precise.MultiTenancy.Accounting;
 using Precise.MultiTenancy.Payments;
 using Precise.Storage;
+using Precise.WorkFlow;
 
 namespace Precise.EntityFrameworkCore
 {
@@ -33,6 +35,20 @@ namespace Precise.EntityFrameworkCore
         public virtual DbSet<Invoice> Invoices { get; set; }
 
         public virtual DbSet<PersistedGrantEntity> PersistedGrants { get; set; }
+
+        /***工作流***/
+        public virtual DbSet<FlowInstance> FlowInstances { get; set; }
+        public virtual DbSet<FlowInstanceOperationHistory> FlowInstanceOperationHistorys { get; set; }
+        public virtual DbSet<FlowInstanceTransitionHistory> FlowInstanceTransitionHistorys { get; set; }
+        public virtual DbSet<FlowScheme> FlowSchemes { get; set; }
+        public virtual DbSet<Form> Forms { get; set; }
+        /***End***/
+
+        /***数据字典***/
+        public virtual DbSet<ItemsEntity> ItemsEntitys { get; set; }
+        public virtual DbSet<ItemsDetailEntity> ItemsDetailEntities { get; set; }
+        /***End***/
+
 
         public PreciseDbContext(DbContextOptions<PreciseDbContext> options)
             : base(options)

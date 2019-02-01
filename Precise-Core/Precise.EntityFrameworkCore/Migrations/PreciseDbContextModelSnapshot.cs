@@ -1092,6 +1092,82 @@ namespace Precise.Migrations
                     b.ToTable("AppChatMessages");
                 });
 
+            modelBuilder.Entity("Precise.DataItems.ItemsDetailEntity", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<DateTime>("CreationTime");
+
+                    b.Property<long?>("CreatorUserId");
+
+                    b.Property<long?>("DeleterUserId");
+
+                    b.Property<DateTime?>("DeletionTime");
+
+                    b.Property<string>("Description");
+
+                    b.Property<bool>("IsActive");
+
+                    b.Property<bool?>("IsDefault");
+
+                    b.Property<bool>("IsDeleted");
+
+                    b.Property<string>("ItemCode");
+
+                    b.Property<string>("ItemId");
+
+                    b.Property<string>("ItemName");
+
+                    b.Property<DateTime?>("LastModificationTime");
+
+                    b.Property<long?>("LastModifierUserId");
+
+                    b.Property<string>("ParentId");
+
+                    b.Property<int?>("SortCode");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ItemsDetailEntities");
+                });
+
+            modelBuilder.Entity("Precise.DataItems.ItemsEntity", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<DateTime>("CreationTime");
+
+                    b.Property<long?>("CreatorUserId");
+
+                    b.Property<long?>("DeleterUserId");
+
+                    b.Property<DateTime?>("DeletionTime");
+
+                    b.Property<string>("Description");
+
+                    b.Property<string>("EnCode");
+
+                    b.Property<string>("FullName");
+
+                    b.Property<bool>("IsActive");
+
+                    b.Property<bool>("IsDeleted");
+
+                    b.Property<DateTime?>("LastModificationTime");
+
+                    b.Property<long?>("LastModifierUserId");
+
+                    b.Property<string>("ParentId");
+
+                    b.Property<int?>("SortCode");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ItemsEntitys");
+                });
+
             modelBuilder.Entity("Precise.Friendships.Friendship", b =>
                 {
                     b.Property<long>("Id")
@@ -1281,6 +1357,234 @@ namespace Precise.Migrations
                     b.HasIndex("TenantId");
 
                     b.ToTable("AppBinaryObjects");
+                });
+
+            modelBuilder.Entity("Precise.WorkFlow.FlowInstance", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("ActivityId");
+
+                    b.Property<string>("ActivityName");
+
+                    b.Property<int?>("ActivityType");
+
+                    b.Property<string>("Code");
+
+                    b.Property<DateTime>("CreationTime");
+
+                    b.Property<long?>("CreatorUserId");
+
+                    b.Property<string>("CustomName");
+
+                    b.Property<string>("DbName");
+
+                    b.Property<long?>("DeleterUserId");
+
+                    b.Property<DateTime?>("DeletionTime");
+
+                    b.Property<string>("Description");
+
+                    b.Property<int>("FlowLevel");
+
+                    b.Property<string>("FrmContentData");
+
+                    b.Property<string>("FrmContentParse");
+
+                    b.Property<string>("FrmData");
+
+                    b.Property<string>("FrmId");
+
+                    b.Property<int>("FrmType");
+
+                    b.Property<string>("InstanceSchemeId");
+
+                    b.Property<bool>("IsActive");
+
+                    b.Property<bool>("IsDeleted");
+
+                    b.Property<int>("IsFinish");
+
+                    b.Property<DateTime?>("LastModificationTime");
+
+                    b.Property<long?>("LastModifierUserId");
+
+                    b.Property<string>("MakerList");
+
+                    b.Property<string>("PreviousId");
+
+                    b.Property<string>("SchemeContent");
+
+                    b.Property<string>("SchemeId");
+
+                    b.Property<string>("SchemeType");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("FlowInstances");
+                });
+
+            modelBuilder.Entity("Precise.WorkFlow.FlowInstanceOperationHistory", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Content");
+
+                    b.Property<DateTime>("CreationTime");
+
+                    b.Property<long?>("CreatorUserId");
+
+                    b.Property<long?>("DeleterUserId");
+
+                    b.Property<DateTime?>("DeletionTime");
+
+                    b.Property<string>("InstanceId");
+
+                    b.Property<bool>("IsDeleted");
+
+                    b.Property<DateTime?>("LastModificationTime");
+
+                    b.Property<long?>("LastModifierUserId");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("FlowInstanceOperationHistorys");
+                });
+
+            modelBuilder.Entity("Precise.WorkFlow.FlowInstanceTransitionHistory", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<DateTime>("CreationTime");
+
+                    b.Property<long?>("CreatorUserId");
+
+                    b.Property<long?>("DeleterUserId");
+
+                    b.Property<DateTime?>("DeletionTime");
+
+                    b.Property<string>("FromNodeId");
+
+                    b.Property<string>("FromNodeName");
+
+                    b.Property<int?>("FromNodeType");
+
+                    b.Property<string>("InstanceId");
+
+                    b.Property<bool>("IsActive");
+
+                    b.Property<bool>("IsDeleted");
+
+                    b.Property<DateTime?>("LastModificationTime");
+
+                    b.Property<long?>("LastModifierUserId");
+
+                    b.Property<string>("ToNodeId");
+
+                    b.Property<string>("ToNodeName");
+
+                    b.Property<int?>("ToNodeType");
+
+                    b.Property<int>("TransitionSate");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("FlowInstanceTransitionHistorys");
+                });
+
+            modelBuilder.Entity("Precise.WorkFlow.FlowScheme", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("AuthorizeType");
+
+                    b.Property<DateTime>("CreationTime");
+
+                    b.Property<long?>("CreatorUserId");
+
+                    b.Property<long?>("DeleterUserId");
+
+                    b.Property<DateTime?>("DeletionTime");
+
+                    b.Property<string>("Description");
+
+                    b.Property<string>("FrmId");
+
+                    b.Property<int>("FrmType");
+
+                    b.Property<bool>("IsActive");
+
+                    b.Property<bool>("IsDeleted");
+
+                    b.Property<DateTime?>("LastModificationTime");
+
+                    b.Property<long?>("LastModifierUserId");
+
+                    b.Property<string>("SchemeCanUser");
+
+                    b.Property<string>("SchemeCode");
+
+                    b.Property<string>("SchemeContent");
+
+                    b.Property<string>("SchemeName");
+
+                    b.Property<string>("SchemeType");
+
+                    b.Property<string>("SchemeVersion");
+
+                    b.Property<int>("SortCode");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("FlowSchemes");
+                });
+
+            modelBuilder.Entity("Precise.WorkFlow.Form", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Content");
+
+                    b.Property<string>("ContentData");
+
+                    b.Property<string>("ContentParse");
+
+                    b.Property<DateTime>("CreationTime");
+
+                    b.Property<long?>("CreatorUserId");
+
+                    b.Property<string>("DbName");
+
+                    b.Property<int>("Delete");
+
+                    b.Property<long?>("DeleterUserId");
+
+                    b.Property<DateTime?>("DeletionTime");
+
+                    b.Property<string>("Description");
+
+                    b.Property<int>("Fields");
+
+                    b.Property<bool>("IsActive");
+
+                    b.Property<bool>("IsDeleted");
+
+                    b.Property<DateTime?>("LastModificationTime");
+
+                    b.Property<long?>("LastModifierUserId");
+
+                    b.Property<string>("Name");
+
+                    b.Property<int>("SortCode");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Forms");
                 });
 
             modelBuilder.Entity("Precise.Editions.SubscribableEdition", b =>
