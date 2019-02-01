@@ -54,7 +54,7 @@ namespace Precise.WorkFlow
         {
             var output = new GetFlowInstanceForEditOutput();
             FlowInstanceEditDto editDto;
-            if (string.IsNullOrEmpty(input.Id))
+            if (!string.IsNullOrEmpty(input.Id))
             {
                 var entity = await _flowInstanceRepository.GetAsync(input.Id);
                 editDto = entity.MapTo<FlowInstanceEditDto>();
@@ -72,7 +72,7 @@ namespace Precise.WorkFlow
         /// </summary>
         public async Task CreateOrUpdate(CreateOrUpdateFlowInstanceInput input)
         {
-            if (string.IsNullOrEmpty(input.FlowInstance.Id))
+            if (!string.IsNullOrEmpty(input.FlowInstance.Id))
             {
                 await Update(input.FlowInstance);
             }

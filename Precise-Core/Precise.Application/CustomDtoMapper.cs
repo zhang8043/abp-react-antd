@@ -59,7 +59,7 @@ namespace Precise
 
             //Chat
             configuration.CreateMap<ChatMessage, ChatMessageDto>();
-            configuration.CreateMap<ChatMessage, ChatMessageExportDto>(); 
+            configuration.CreateMap<ChatMessage, ChatMessageExportDto>();
 
             //Feature
             configuration.CreateMap<FlatFeatureSelectDto, Feature>().ReverseMap();
@@ -142,6 +142,20 @@ namespace Precise
             configuration.CreateMap<FlowSchemeEditDto, FlowScheme>();
             configuration.CreateMap<FlowScheme, FlowSchemeEditDto>();
 
+            configuration.CreateMap<FlowInstanceOperationHistory, FlowInstanceOperationHistoryListDto>();
+            configuration.CreateMap<FlowInstanceOperationHistoryListDto, FlowInstanceOperationHistory>();
+            configuration.CreateMap<FlowInstanceOperationHistoryEditDto, FlowInstanceOperationHistory>();
+            configuration.CreateMap<FlowInstanceOperationHistory, FlowInstanceOperationHistoryEditDto>();
+
+            configuration.CreateMap<FlowInstanceTransitionHistory, FlowInstanceTransitionHistoryListDto>();
+            configuration.CreateMap<FlowInstanceTransitionHistoryListDto, FlowInstanceTransitionHistory>();
+            configuration.CreateMap<FlowInstanceTransitionHistoryEditDto, FlowInstanceTransitionHistory>();
+            configuration.CreateMap<FlowInstanceTransitionHistory, FlowInstanceTransitionHistoryEditDto>();
+
+            configuration.CreateMap<Form, FormListDto>();
+            configuration.CreateMap<FormListDto, Form>();
+            configuration.CreateMap<FormEditDto, Form>();
+            configuration.CreateMap<Form, FormEditDto>();
         }
     }
 }

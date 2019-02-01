@@ -55,7 +55,7 @@ namespace Precise.WorkFlow
         {
             var output = new GetFlowSchemeForEditOutput();
             FlowSchemeEditDto editDto;
-            if (string.IsNullOrEmpty(input.Id))
+            if (!string.IsNullOrEmpty(input.Id))
             {
                 var entity = await _flowSchemeRepository.GetAsync(input.Id);
                 editDto = entity.MapTo<FlowSchemeEditDto>();
@@ -73,7 +73,7 @@ namespace Precise.WorkFlow
         /// </summary>
         public async Task CreateOrUpdate(CreateOrUpdateFlowSchemeInput input)
         {
-            if (string.IsNullOrEmpty(input.FlowScheme.Id))
+            if (!string.IsNullOrEmpty(input.FlowScheme.Id))
             {
                 await Update(input.FlowScheme);
             }
