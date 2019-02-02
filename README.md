@@ -1,4 +1,4 @@
-﻿# ASP.NET Boilerplate + React + Ant Design Pro（玩命开发中...）
+﻿# ASP.NET Boilerplate + React + Ant Design Pro
 
 # 项目简介：
 
@@ -29,7 +29,7 @@
   - 表单管理
 - Arcgis地图
 - 企业微信
-
+（部分功能暂未实现，玩命开发中...）
 # 技术介绍：
 
 ## 什么是ASP.NET Boilerplate？
