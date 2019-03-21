@@ -8,6 +8,7 @@
 
 /Precise-Antd/yarn.lock
 /Precise-Antd/package-lock.json
+/Precise-Core/Precise.Web.Host/App_Data/*
 
 /Precise-Antd/.temp/**
 .umi

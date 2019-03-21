@@ -10,7 +10,7 @@ const { Tab, UserName, Password, Mobile, Captcha, Submit } = Login;
 
 @connect(({ login, loading }) => ({
   login,
-  submitting: loading.effects['login/login'],
+  submitting: loading.effects['login/authenticate'],
 }))
 class LoginPage extends Component {
   state = {
@@ -40,14 +40,15 @@ class LoginPage extends Component {
     });
 
   handleSubmit = (err, values) => {
-    const { type } = this.state;
+    const { type, rememberClient } = this.state;
     if (!err) {
       const { dispatch } = this.props;
       dispatch({
-        type: 'login/login',
+        type: 'login/authenticate',
         payload: {
           ...values,
           type,
+          rememberClient,
         },
       });
     }
@@ -76,65 +77,63 @@ class LoginPage extends Component {
             this.loginForm = form;
           }}
         >
-          <Tab key="account" tab={formatMessage({ id: 'app.login.tab-login-credentials' })}>
+          <Tab key="account" tab="账户密码登录">
             {login.status === 'error' &&
               login.type === 'account' &&
               !submitting &&
-              this.renderMessage(formatMessage({ id: 'app.login.message-invalid-credentials' }))}
+              this.renderMessage("账户或密码错误")}
             <UserName
               name="userNameOrEmailAddress"
-              placeholder={`${formatMessage({ id: 'app.login.userName' })}: admin or user`}
+              placeholder="用户名或邮箱"
               rules={[
                 {
                   required: true,
-                  message: formatMessage({ id: 'validation.userName.required' }),
+                  message: "请输入用户名！",
                 },
               ]}
             />
             <Password
               name="password"
-              placeholder={`${formatMessage({ id: 'app.login.password' })}: ant.design`}
+              placeholder="密码"
               rules={[
                 {
                   required: true,
-                  message: formatMessage({ id: 'validation.password.required' }),
+                  message: "请输入密码！",
                 },
               ]}
               onPressEnter={() => this.loginForm.validateFields(this.handleSubmit)}
             />
           </Tab>
-          <Tab key="mobile" tab={formatMessage({ id: 'app.login.tab-login-mobile' })}>
+          <Tab key="mobile" tab="手机号登录">
             {login.status === 'error' &&
               login.type === 'mobile' &&
               !submitting &&
-              this.renderMessage(
-                formatMessage({ id: 'app.login.message-invalid-verification-code' })
-              )}
+              this.renderMessage("验证码错误")}
             <Mobile
               name="mobile"
-              placeholder={formatMessage({ id: 'form.phone-number.placeholder' })}
+              placeholder="手机号"
               rules={[
                 {
                   required: true,
-                  message: formatMessage({ id: 'validation.phone-number.required' }),
+                  message: "请输入手机号！",
                 },
                 {
                   pattern: /^1\d{10}$/,
-                  message: formatMessage({ id: 'validation.phone-number.wrong-format' }),
+                  message: "手机号格式错误！",
                 },
               ]}
             />
             <Captcha
               name="captcha"
-              placeholder={formatMessage({ id: 'form.verification-code.placeholder' })}
+              placeholder="验证码"
               countDown={120}
               onGetCaptcha={this.onGetCaptcha}
-              getCaptchaButtonText={formatMessage({ id: 'form.get-captcha' })}
-              getCaptchaSecondText={formatMessage({ id: 'form.captcha.second' })}
+              getCaptchaButtonText="获取验证码"
+              getCaptchaSecondText="秒"
               rules={[
                 {
                   required: true,
-                  message: formatMessage({ id: 'validation.verification-code.required' }),
+                  message: "请输入验证码！",
                 },
               ]}
             />
@@ -151,10 +150,6 @@ class LoginPage extends Component {
             <FormattedMessage id="app.login.login" />
           </Submit>
           <div className={styles.other}>
-            <FormattedMessage id="app.login.sign-in-with" />
-            <Icon type="alipay-circle" className={styles.icon} theme="outlined" />
-            <Icon type="taobao-circle" className={styles.icon} theme="outlined" />
-            <Icon type="weibo-circle" className={styles.icon} theme="outlined" />
             <Link className={styles.register} to="/accounts/register">
               <FormattedMessage id="app.login.signup" />
             </Link>
