@@ -38,6 +38,7 @@
     "bizcharts-plugin-slider": "^2.1.1-beta.1",
     "classnames": "^2.2.6",
     "dva": "^2.4.0",
+    "dva-model-extend": "^0.1.2",
     "enquire-js": "^0.2.1",
     "esri-loader": "^2.6.0",
     "gg-editor": "^2.0.0",
