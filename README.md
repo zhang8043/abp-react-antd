@@ -1,5 +1,7 @@
 ﻿# ASP.NET Boilerplate + React + Ant Design Pro
 
+# Updating integration abp.js......
+
 # 项目简介：
 
 * abp-react-antd是一套基于ASP.NET Boilerplate + React + Ant Design Pro开发的框架，源代码完全开源。
