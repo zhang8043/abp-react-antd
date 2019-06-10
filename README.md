@@ -1,6 +1,6 @@
 ﻿# ASP.NET Boilerplate + React + Ant Design Pro
 
-# Updating integration abp.js......
+# 新版Vue UI将在 https://github.com/zhang8043/abp-vue-antd 搭建
 
 # 项目简介：
 
