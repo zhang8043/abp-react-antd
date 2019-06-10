@@ -1,6 +1,7 @@
 ﻿# ASP.NET Boilerplate + React + Ant Design Pro
 
 ## 新版Vue UI将在 https://github.com/zhang8043/abp-vue-antd 搭建
+## Vue 已集成abp.js 和 signalr
 
 # 项目简介：
 
