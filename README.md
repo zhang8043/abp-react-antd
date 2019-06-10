@@ -2,6 +2,8 @@
 
 ## 新版Vue UI将在 https://github.com/zhang8043/abp-vue-antd 搭建
 ## Vue 已集成abp.js 和 signalr
+## 持续更新...
+## 80439484@qq.com 欢迎骚扰
 
 # 项目简介：
 
