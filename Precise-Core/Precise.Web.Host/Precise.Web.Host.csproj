@@ -13,9 +13,6 @@
     <None Include="app.config" />
     <None Include="wwwroot\swagger\ui\abp.js" />
     <None Include="wwwroot\swagger\ui\abp.swagger.js" />
-    <None Update="Dockerfile">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Update="log4net.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
@@ -39,12 +36,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Precise.Web.Core\Precise.Web.Core.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="Dockerfile">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
 
   <ItemGroup>

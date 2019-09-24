@@ -131,7 +131,7 @@ export default [
             name: 'user',
             authority: ['Pages.Administration.Users'],
             icon: 'user',
-            component: './Admin/User',
+            component: './Precise/Users',
           },
           {
             path: '/admin/workflow',
