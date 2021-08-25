@@ -13,7 +13,7 @@
     <PackageReference Include="IdentityServer4.AccessTokenValidation" Version="2.7.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.Facebook" Version="2.1.2" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="2.1.2" />
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="2.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="2.1.30" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.MicrosoftAccount" Version="2.1.2" />
     <PackageReference Include="Microsoft.AspNetCore.Owin" Version="2.1.1" />
     <PackageReference Include="PaulMiami.AspNetCore.Mvc.Recaptcha" Version="1.2.1" />
