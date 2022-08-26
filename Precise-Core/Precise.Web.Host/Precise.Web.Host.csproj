@@ -31,7 +31,7 @@
 
   <ItemGroup>
     <PackageReference Include="Abp.Castle.Log4Net" Version="4.0.2" />
-    <PackageReference Include="Microsoft.AspNetCore.App" Version="2.1.7" />
+    <PackageReference Include="Microsoft.AspNetCore.App" Version="2.1.22" />
   </ItemGroup>
 
   <ItemGroup>
